@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/app/bloc/app_bloc.dart';
 import 'package:hackathon/profile/profile_page.dart';
-import 'package:hackathon/profile/widgets/avatar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
