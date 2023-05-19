@@ -2,6 +2,7 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/auth/login/login.dart';
+import 'package:hackathon/calendar/repository/model/slot.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,6 +11,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Slot slot = Slot(DateTime.now(), DateTime.now());
+    print(slot.toString());
     return Scaffold(
       appBar: AppBar(title: const Text('Авторизация')),
       body: Padding(
