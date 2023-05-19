@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/app/bloc/app_bloc.dart';
+import 'package:hackathon/calendar/calendar.dart';
 import 'package:hackathon/profile/profile_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         },
         children: const [
           Center(child: Text('1')),
-          Center(child: Text('2')),
+          CalendarView(),
           ProfileView(),
         ],
       ),
