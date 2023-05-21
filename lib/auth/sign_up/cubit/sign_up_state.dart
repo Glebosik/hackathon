@@ -12,6 +12,7 @@ final class SignUpState extends Equatable {
     this.firstName = const Name.pure(),
     this.secondName = const Name.pure(),
     this.thirdName,
+    this.check = false,
     this.status = FormzSubmissionStatus.initial,
     this.isValid = false,
     this.errorMessage,
@@ -25,15 +26,22 @@ final class SignUpState extends Equatable {
   final Name firstName;
   final Name secondName;
   final Name? thirdName;
+  final bool check;
   final FormzSubmissionStatus status;
   final bool isValid;
   final String? errorMessage;
 
   @override
   List<Object?> get props => [
+        firstName,
+        secondName,
+        thirdName,
         email,
         password,
         confirmedPassword,
+        question,
+        answer,
+        check,
         status,
         isValid,
         errorMessage,
@@ -48,6 +56,7 @@ final class SignUpState extends Equatable {
     Name? firstName,
     Name? secondName,
     Name? thirdName,
+    bool? check,
     FormzSubmissionStatus? status,
     bool? isValid,
     String? errorMessage,
@@ -61,6 +70,7 @@ final class SignUpState extends Equatable {
       firstName: firstName ?? this.firstName,
       secondName: secondName ?? this.secondName,
       thirdName: thirdName ?? this.thirdName,
+      check: check ?? this.check,
       status: status ?? this.status,
       isValid: isValid ?? this.isValid,
       errorMessage: errorMessage ?? this.errorMessage,

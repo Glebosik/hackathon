@@ -26,6 +26,7 @@ dependencies:
   intl: ^0.18.1
   meta: ^1.8.0
   table_calendar: ^3.0.9
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   bloc_test: ^9.1.1

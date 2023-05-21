@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/auth/login/login.dart';
 import 'package:hackathon/auth/sign_up/sign_up.dart';
 import 'package:hackathon/gen/assets.gen.dart';

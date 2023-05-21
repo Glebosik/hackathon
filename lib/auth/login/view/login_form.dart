@@ -32,13 +32,9 @@ class LoginForm extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
-                height: height * 0.05,
-              ),
+              SizedBox(height: height * 0.05),
               Assets.icons.logoName.svg(width: width * 0.4),
-              SizedBox(
-                height: height * 0.05,
-              ),
+              SizedBox(height: height * 0.05),
               SizedBox(
                 height: height * 0.5,
                 width: width * 0.9,
@@ -52,17 +48,11 @@ class LoginForm extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           _EmailInput(),
-                          SizedBox(
-                            height: height * 0.02,
-                          ),
+                          SizedBox(height: height * 0.02),
                           _PasswordInput(),
-                          SizedBox(
-                            height: height * 0.05,
-                          ),
+                          SizedBox(height: height * 0.05),
                           _LoginButton(),
-                          SizedBox(
-                            height: height * 0.05,
-                          ),
+                          SizedBox(height: height * 0.05),
                           const _ForgotPasswordButton()
                         ],
                       ),
@@ -70,9 +60,7 @@ class LoginForm extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: height * 0.05,
-              ),
+              SizedBox(height: height * 0.05),
               const _SignUpButton(),
             ],
           ),
@@ -107,28 +95,14 @@ class _EmailInput extends StatelessWidget {
     return BlocBuilder<LoginCubit, LoginState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
-        var borderWithoutBorder = const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12)),
-            borderSide: BorderSide(
-              width: 0,
-              color: ColorName.backgroundOrange,
-            ));
         return TextField(
           key: const Key('loginForm_emailInput_textField'),
           onChanged: (email) => context.read<LoginCubit>().emailChanged(email),
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            isDense: true,
             contentPadding: EdgeInsets.fromLTRB(
                 width * 0.05, height * 0.02, width * 0.05, height * 0.02),
             labelText: 'Телефон / Email / СНИЛС',
-            floatingLabelStyle: const TextStyle(color: ColorName.orange),
-            filled: true,
-            fillColor: ColorName.backgroundOrange,
-            enabledBorder: borderWithoutBorder,
-            disabledBorder: borderWithoutBorder,
-            focusedBorder: borderWithoutBorder,
-            border: borderWithoutBorder,
           ),
         );
       },
@@ -144,29 +118,15 @@ class _PasswordInput extends StatelessWidget {
     return BlocBuilder<LoginCubit, LoginState>(
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
-        var borderWithoutBorder = const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12)),
-            borderSide: BorderSide(
-              width: 0,
-              color: ColorName.backgroundOrange,
-            ));
         return TextField(
           key: const Key('loginForm_passwordInput_textField'),
           onChanged: (password) =>
               context.read<LoginCubit>().passwordChanged(password),
           obscureText: true,
           decoration: InputDecoration(
-            isDense: true,
             contentPadding: EdgeInsets.fromLTRB(
                 width * 0.05, height * 0.02, width * 0.05, height * 0.02),
             labelText: 'Пароль',
-            floatingLabelStyle: const TextStyle(color: ColorName.orange),
-            filled: true,
-            fillColor: ColorName.backgroundOrange,
-            enabledBorder: borderWithoutBorder,
-            disabledBorder: borderWithoutBorder,
-            focusedBorder: borderWithoutBorder,
-            border: borderWithoutBorder,
           ),
         );
       },

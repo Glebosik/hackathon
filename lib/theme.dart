@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 
+var borderWithoutBorder = const OutlineInputBorder(
+    borderRadius: BorderRadius.all(Radius.circular(12)),
+    borderSide: BorderSide(
+      width: 0,
+      color: ColorName.backgroundOrange,
+    ));
+
 final theme = ThemeData(
   textTheme: GoogleFonts.interTextTheme(),
   primaryColor: ColorName.orange,
@@ -12,10 +19,15 @@ final theme = ThemeData(
   ),
   scaffoldBackgroundColor: ColorName.white,
   inputDecorationTheme: InputDecorationTheme(
+    isDense: true,
+    floatingLabelStyle: const TextStyle(color: Colors.black87),
+    filled: true,
+    fillColor: ColorName.backgroundOrange,
     focusColor: ColorName.orange,
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
-    ),
+    enabledBorder: borderWithoutBorder,
+    disabledBorder: borderWithoutBorder,
+    focusedBorder: borderWithoutBorder,
+    border: borderWithoutBorder,
   ),
   appBarTheme: AppBarTheme(
     titleTextStyle: GoogleFonts.inter().copyWith(
