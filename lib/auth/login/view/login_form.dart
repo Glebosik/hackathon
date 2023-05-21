@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/auth/login/login.dart';
 import 'package:hackathon/auth/sign_up/sign_up.dart';
+import 'package:hackathon/gen/assets.gen.dart';
+import 'package:hackathon/gen/colors.gen.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state.status.isFailure) {
@@ -19,22 +24,56 @@ class LoginForm extends StatelessWidget {
                 content: Text(state.errorMessage ?? 'Ошибка авторизации'),
               ),
             );
+        } else if (state.status.isSuccess) {
+          Navigator.of(context).pop();
         }
       },
-      child: Align(
-        alignment: const Alignment(0, -1 / 3),
-        child: SingleChildScrollView(
+      child: SingleChildScrollView(
+        child: Center(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(height: 16),
-              _EmailInput(),
-              const SizedBox(height: 8),
-              _PasswordInput(),
-              const SizedBox(height: 8),
-              _LoginButton(),
-              const SizedBox(height: 4),
-              _SignUpButton(),
+              SizedBox(
+                height: height * 0.05,
+              ),
+              Assets.icons.logoName.svg(width: width * 0.4),
+              SizedBox(
+                height: height * 0.05,
+              ),
+              SizedBox(
+                height: height * 0.5,
+                width: width * 0.9,
+                child: Card(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(width * 0.05, height * 0.05,
+                        width * 0.05, height * 0.05),
+                    child: OverflowBox(
+                      maxHeight: height * 0.4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _EmailInput(),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          _PasswordInput(),
+                          SizedBox(
+                            height: height * 0.05,
+                          ),
+                          _LoginButton(),
+                          SizedBox(
+                            height: height * 0.05,
+                          ),
+                          const _ForgotPasswordButton()
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: height * 0.05,
+              ),
+              const _SignUpButton(),
             ],
           ),
         ),
@@ -43,22 +82,53 @@ class LoginForm extends StatelessWidget {
   }
 }
 
+class _SignUpButton extends StatelessWidget {
+  const _SignUpButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return TextButton(
+      onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
+      style: TextButton.styleFrom(fixedSize: Size(width * 0.9, height * 0.05)),
+      child: const Text('Зарегистрироваться'),
+    );
+  }
+}
+
 class _EmailInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return BlocBuilder<LoginCubit, LoginState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
+        var borderWithoutBorder = const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            borderSide: BorderSide(
+              width: 0,
+              color: ColorName.backgroundOrange,
+            ));
         return TextField(
           key: const Key('loginForm_emailInput_textField'),
           onChanged: (email) => context.read<LoginCubit>().emailChanged(email),
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            labelText: 'электронная почта',
-            helperText: '',
-            errorText: state.email.displayError != null
-                ? 'некорректный адрес электронной почты'
-                : null,
+            isDense: true,
+            contentPadding: EdgeInsets.fromLTRB(
+                width * 0.05, height * 0.02, width * 0.05, height * 0.02),
+            labelText: 'Телефон / Email / СНИЛС',
+            floatingLabelStyle: const TextStyle(color: ColorName.orange),
+            filled: true,
+            fillColor: ColorName.backgroundOrange,
+            enabledBorder: borderWithoutBorder,
+            disabledBorder: borderWithoutBorder,
+            focusedBorder: borderWithoutBorder,
+            border: borderWithoutBorder,
           ),
         );
       },
@@ -69,17 +139,34 @@ class _EmailInput extends StatelessWidget {
 class _PasswordInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return BlocBuilder<LoginCubit, LoginState>(
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
+        var borderWithoutBorder = const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            borderSide: BorderSide(
+              width: 0,
+              color: ColorName.backgroundOrange,
+            ));
         return TextField(
           key: const Key('loginForm_passwordInput_textField'),
           onChanged: (password) =>
               context.read<LoginCubit>().passwordChanged(password),
           obscureText: true,
-          decoration: const InputDecoration(
-            labelText: 'пароль',
-            helperText: '',
+          decoration: InputDecoration(
+            isDense: true,
+            contentPadding: EdgeInsets.fromLTRB(
+                width * 0.05, height * 0.02, width * 0.05, height * 0.02),
+            labelText: 'Пароль',
+            floatingLabelStyle: const TextStyle(color: ColorName.orange),
+            filled: true,
+            fillColor: ColorName.backgroundOrange,
+            enabledBorder: borderWithoutBorder,
+            disabledBorder: borderWithoutBorder,
+            focusedBorder: borderWithoutBorder,
+            border: borderWithoutBorder,
           ),
         );
       },
@@ -90,6 +177,8 @@ class _PasswordInput extends StatelessWidget {
 class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return BlocBuilder<LoginCubit, LoginState>(
       builder: (context, state) {
         return state.status.isInProgress
@@ -97,32 +186,34 @@ class _LoginButton extends StatelessWidget {
             : ElevatedButton(
                 key: const Key('loginForm_continue_raisedButton'),
                 style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  backgroundColor: const Color(0xFFFFD600),
+                  fixedSize: Size(width * 0.7, height * 0.07),
                 ),
                 onPressed: state.isValid
                     ? () => context.read<LoginCubit>().logInWithCredentials()
-                    : null,
-                child: const Text('ВОЙТИ'),
+                    : () {},
+                child: Text(
+                  'Войти',
+                  style: GoogleFonts.inter().copyWith(color: Colors.white),
+                ),
               );
       },
     );
   }
 }
 
-class _SignUpButton extends StatelessWidget {
+class _ForgotPasswordButton extends StatelessWidget {
+  const _ForgotPasswordButton({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return TextButton(
-      key: const Key('loginForm_createAccount_flatButton'),
-      onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
-      child: Text(
-        'СОЗДАТЬ АККАУНТ',
-        style: TextStyle(color: theme.primaryColor),
-      ),
+      onPressed: () {}, //TODO: Восстановление пароля
+      style: TextButton.styleFrom(fixedSize: Size(width * 0.7, height * 0.05)),
+      child: const Text('Не удается войти?'),
     );
   }
 }

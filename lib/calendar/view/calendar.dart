@@ -7,6 +7,7 @@ class CalendarView extends StatefulWidget {
   const CalendarView({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CalendarViewState createState() => _CalendarViewState();
 }
 

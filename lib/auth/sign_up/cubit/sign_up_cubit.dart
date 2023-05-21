@@ -1,5 +1,6 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:form_inputs/form_inputs.dart';
 import 'package:formz/formz.dart';
@@ -65,10 +66,19 @@ class SignUpCubit extends Cubit<SignUpState> {
     if (!state.isValid) return;
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _authenticationRepository.signUp(
+      final uid = await _authenticationRepository.signUp(
         email: state.email.value,
         password: state.password.value,
       );
+      FirebaseFirestore.instance.collection('users/').doc(uid).set({
+        'email': state.email.value,
+        'phoneNumber': '',
+        'firstName': state.firstName.value,
+        'secondName': state.secondName.value,
+        'thirdName': state.thirdName?.value,
+        'question': state.answer.value,
+        'answer': state.answer.value,
+      });
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on SignUpWithEmailAndPasswordFailure catch (e) {
       emit(

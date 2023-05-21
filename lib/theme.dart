@@ -1,16 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hackathon/gen/colors.gen.dart';
 
 final theme = ThemeData(
-  textTheme: GoogleFonts.openSansTextTheme(),
-  primaryColorDark: const Color(0xFF0097A7),
-  primaryColorLight: const Color(0xFFB2EBF2),
-  primaryColor: const Color(0xFF00BCD4),
-  colorScheme: const ColorScheme.light(secondary: Color(0xFF009688)),
-  scaffoldBackgroundColor: const Color(0xFFE0F2F1),
+  textTheme: GoogleFonts.interTextTheme(),
+  primaryColor: ColorName.orange,
+  colorScheme: const ColorScheme.light(
+    primary: ColorName.orange,
+    background: ColorName.backgroundOrange,
+    secondary: Colors.black,
+  ),
+  scaffoldBackgroundColor: ColorName.white,
   inputDecorationTheme: InputDecorationTheme(
+    focusColor: ColorName.orange,
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
+  appBarTheme: AppBarTheme(
+    titleTextStyle: GoogleFonts.inter().copyWith(
+        fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+    foregroundColor: Colors.black,
+    backgroundColor: ColorName.white,
+    elevation: 0,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all<Color>(ColorName.orange),
+      shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: ButtonStyle(
+      overlayColor: MaterialStateProperty.all(ColorName.backgroundOrange),
+      foregroundColor: MaterialStateProperty.all<Color>(ColorName.orange),
+      shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
     ),
   ),
 );

@@ -7,6 +7,11 @@ final class SignUpState extends Equatable {
     this.email = const Email.pure(),
     this.password = const Password.pure(),
     this.confirmedPassword = const ConfirmedPassword.pure(),
+    this.question = const Question.pure(),
+    this.answer = const Answer.pure(),
+    this.firstName = const Name.pure(),
+    this.secondName = const Name.pure(),
+    this.thirdName,
     this.status = FormzSubmissionStatus.initial,
     this.isValid = false,
     this.errorMessage,
@@ -15,6 +20,11 @@ final class SignUpState extends Equatable {
   final Email email;
   final Password password;
   final ConfirmedPassword confirmedPassword;
+  final Question question;
+  final Answer answer;
+  final Name firstName;
+  final Name secondName;
+  final Name? thirdName;
   final FormzSubmissionStatus status;
   final bool isValid;
   final String? errorMessage;
@@ -33,6 +43,11 @@ final class SignUpState extends Equatable {
     Email? email,
     Password? password,
     ConfirmedPassword? confirmedPassword,
+    Question? question,
+    Answer? answer,
+    Name? firstName,
+    Name? secondName,
+    Name? thirdName,
     FormzSubmissionStatus? status,
     bool? isValid,
     String? errorMessage,
@@ -41,6 +56,11 @@ final class SignUpState extends Equatable {
       email: email ?? this.email,
       password: password ?? this.password,
       confirmedPassword: confirmedPassword ?? this.confirmedPassword,
+      question: question ?? this.question,
+      answer: answer ?? this.answer,
+      firstName: firstName ?? this.firstName,
+      secondName: secondName ?? this.secondName,
+      thirdName: thirdName ?? this.thirdName,
       status: status ?? this.status,
       isValid: isValid ?? this.isValid,
       errorMessage: errorMessage ?? this.errorMessage,

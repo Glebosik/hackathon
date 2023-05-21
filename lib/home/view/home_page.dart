@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
           setState(() => _selectedIndex = index);
         },
         children: const [
+          //TODO: ТРИ ЭКРАНЧИКА ТУТ
           Center(child: Text('1')),
           CalendarView(),
           ProfileView(),
