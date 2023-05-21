@@ -215,7 +215,6 @@ class _FirstNameInput extends StatelessWidget {
               context.read<SignUpCubit>().firstNameChanged(firstName),
           decoration: InputDecoration(
             labelText: 'Имя',
-            errorText: state.firstName.displayError != null ? "Mda" : null,
             contentPadding: EdgeInsets.fromLTRB(
                 width * 0.05, height * 0.02, width * 0.05, height * 0.02),
           ),
@@ -241,7 +240,6 @@ class _SecondNameInput extends StatelessWidget {
               context.read<SignUpCubit>().secondNameChanged(secondName),
           decoration: InputDecoration(
             labelText: 'Фамилия',
-            errorText: state.secondName.displayError != null ? "Mda" : null,
             contentPadding: EdgeInsets.fromLTRB(
                 width * 0.05, height * 0.02, width * 0.05, height * 0.02),
           ),
@@ -267,7 +265,6 @@ class _ThirdNameInput extends StatelessWidget {
               context.read<SignUpCubit>().thirdNameChanged(thirdName),
           decoration: InputDecoration(
             labelText: 'Отчество',
-            errorText: state.thirdName?.displayError != null ? "Mda" : null,
             contentPadding: EdgeInsets.fromLTRB(
                 width * 0.05, height * 0.02, width * 0.05, height * 0.02),
           ),
