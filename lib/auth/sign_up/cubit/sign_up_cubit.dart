@@ -130,7 +130,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   void questionChanged(String value) {
-    const question = Question.dirty();
+    final question = Question.dirty(value);
     emit(
       state.copyWith(
         question: question,
@@ -148,7 +148,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   void answerChanged(String value) {
-    const answer = Answer.dirty();
+    final answer = Answer.dirty(value);
     emit(
       state.copyWith(
         answer: answer,
