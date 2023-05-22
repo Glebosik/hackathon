@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/cloudLogo.svg
+  SvgGenImage get cloudLogo => const SvgGenImage('assets/icons/cloudLogo.svg');
+
   /// File path: assets/icons/logoName.svg
   SvgGenImage get logoName => const SvgGenImage('assets/icons/logoName.svg');
 
@@ -25,7 +28,7 @@ class $AssetsIconsGen {
       const SvgGenImage('assets/icons/moscowAccess.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [logoName, moscow, moscowAccess];
+  List<SvgGenImage> get values => [cloudLogo, logoName, moscow, moscowAccess];
 }
 
 class Assets {

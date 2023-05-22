@@ -12,6 +12,61 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   final AuthenticationRepository _authenticationRepository;
 
+  void firstNameChanged(String value) {
+    final firstName = Name.dirty(value);
+    emit(
+      state.copyWith(
+        firstName: firstName,
+        isValid: Formz.validate([
+          firstName,
+          state.secondName,
+          state.email,
+          state.password,
+          state.confirmedPassword,
+          state.question,
+          state.answer
+        ]),
+      ),
+    );
+  }
+
+  void secondNameChanged(String value) {
+    final secondName = Name.dirty(value);
+    emit(
+      state.copyWith(
+        secondName: secondName,
+        isValid: Formz.validate([
+          state.firstName,
+          secondName,
+          state.email,
+          state.password,
+          state.confirmedPassword,
+          state.question,
+          state.answer
+        ]),
+      ),
+    );
+  }
+
+  void thirdNameChanged(String value) {
+    final thirdName = Name.dirty(value);
+    emit(
+      state.copyWith(
+        thirdName: thirdName,
+        isValid: Formz.validate([
+          state.firstName,
+          state.secondName,
+          thirdName,
+          state.email,
+          state.password,
+          state.confirmedPassword,
+          state.question,
+          state.answer
+        ]),
+      ),
+    );
+  }
+
   void emailChanged(String value) {
     final email = Email.dirty(value);
     emit(
@@ -19,8 +74,12 @@ class SignUpCubit extends Cubit<SignUpState> {
         email: email,
         isValid: Formz.validate([
           email,
+          state.firstName,
+          state.secondName,
           state.password,
           state.confirmedPassword,
+          state.question,
+          state.answer
         ]),
       ),
     );
@@ -38,8 +97,12 @@ class SignUpCubit extends Cubit<SignUpState> {
         confirmedPassword: confirmedPassword,
         isValid: Formz.validate([
           state.email,
+          state.firstName,
+          state.secondName,
           password,
           confirmedPassword,
+          state.question,
+          state.answer
         ]),
       ),
     );
@@ -55,15 +118,72 @@ class SignUpCubit extends Cubit<SignUpState> {
         confirmedPassword: confirmedPassword,
         isValid: Formz.validate([
           state.email,
+          state.firstName,
+          state.secondName,
           state.password,
           confirmedPassword,
+          state.question,
+          state.answer
+        ]),
+      ),
+    );
+  }
+
+  void questionChanged(String value) {
+    final question = Question.dirty(value);
+    emit(
+      state.copyWith(
+        question: question,
+        isValid: Formz.validate([
+          state.email,
+          state.firstName,
+          state.secondName,
+          state.password,
+          state.confirmedPassword,
+          question,
+          state.answer
+        ]),
+      ),
+    );
+  }
+
+  void answerChanged(String value) {
+    final answer = Answer.dirty(value);
+    emit(
+      state.copyWith(
+        answer: answer,
+        isValid: Formz.validate([
+          state.email,
+          state.firstName,
+          state.secondName,
+          state.password,
+          state.confirmedPassword,
+          state.question,
+          answer
+        ]),
+      ),
+    );
+  }
+
+  void checkBoxChanged(bool check) {
+    emit(
+      state.copyWith(
+        check: check,
+        isValid: Formz.validate([
+          state.email,
+          state.firstName,
+          state.secondName,
+          state.password,
+          state.confirmedPassword,
+          state.question,
+          state.answer
         ]),
       ),
     );
   }
 
   Future<void> signUpFormSubmitted() async {
-    if (!state.isValid) return;
+    if (!state.isValid || !state.check) return;
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
       final uid = await _authenticationRepository.signUp(

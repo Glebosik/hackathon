@@ -16,14 +16,10 @@ class Name extends FormzInput<String, NameValidationError> {
   /// {@macro name}
   const Name.dirty([super.value = '']) : super.dirty();
 
-  static final RegExp _nameRegExp = RegExp(
-    r'^/[^a-zа-яё ]/iu',
-  );
+  static final RegExp _nameRegExp = RegExp(r"^[a-zA-Zа-яА-Я]+");
 
   @override
   NameValidationError? validator(String? value) {
-    return _nameRegExp.hasMatch(value ?? '')
-        ? null
-        : NameValidationError.invalid;
+    return null; //TODO: Проверка имени
   }
 }
