@@ -32,9 +32,9 @@ class SignUpForm extends StatelessWidget {
       },
       child: SingleChildScrollView(
         child: Column(children: [
-          SizedBox(height: height * 0.05),
-          Assets.icons.moscowAccess.svg(),
-          SizedBox(height: height * 0.05),
+          SizedBox(height: height * 0.04),
+          Assets.icons.moscowAccess.svg(width: width * 0.8),
+          SizedBox(height: height * 0.04),
           Container(
             width: double.maxFinite,
             padding: EdgeInsets.fromLTRB(
@@ -49,7 +49,7 @@ class SignUpForm extends StatelessWidget {
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   )),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.04),
               Padding(
                 padding: EdgeInsets.only(left: width * 0.05),
                 child: Align(
@@ -63,13 +63,13 @@ class SignUpForm extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.04),
               _SecondNameInput(),
               SizedBox(height: height * 0.02),
               _FirstNameInput(),
               SizedBox(height: height * 0.02),
               _ThirdNameInput(),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.04),
               Padding(
                 padding: EdgeInsets.only(left: width * 0.05),
                 child: Align(
@@ -83,7 +83,7 @@ class SignUpForm extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: width * 0.05),
+              SizedBox(height: width * 0.04),
               Padding(
                 padding:
                     EdgeInsets.only(left: width * 0.05, right: width * 0.05),
@@ -97,9 +97,9 @@ class SignUpForm extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.04),
               _EmailInput(),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.04),
               Padding(
                 padding: EdgeInsets.only(left: width * 0.05),
                 child: Align(
@@ -113,7 +113,7 @@ class SignUpForm extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: width * 0.05),
+              SizedBox(height: width * 0.04),
               Padding(
                 padding:
                     EdgeInsets.only(left: width * 0.05, right: width * 0.05),
@@ -127,7 +127,7 @@ class SignUpForm extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.04),
               _PasswordInput(),
               SizedBox(height: height * 0.02),
               _ConfirmPasswordInput(),
@@ -135,9 +135,9 @@ class SignUpForm extends StatelessWidget {
               _QuestionInput(),
               SizedBox(height: height * 0.02),
               _AnswerInput(),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.04),
               const _CheckBox(),
-              SizedBox(height: height * 0.07),
+              SizedBox(height: height * 0.04),
               _SignUpButton(),
             ]),
           )
@@ -289,7 +289,7 @@ class _EmailInput extends StatelessWidget {
           decoration: InputDecoration(
             labelText: 'Адрес электронной почты',
             errorText: state.email.displayError != null
-                ? 'Неверный адрес электронной почты'
+                ? 'Некорректный адрес электронной почты'
                 : null,
             contentPadding: EdgeInsets.fromLTRB(
                 width * 0.05, height * 0.02, width * 0.05, height * 0.02),

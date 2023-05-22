@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/auth/login/login.dart';
 import 'package:hackathon/auth/sign_up/sign_up.dart';
 import 'package:hackathon/gen/assets.gen.dart';
-import 'package:hackathon/gen/colors.gen.dart';
+import 'package:hackathon/utils/route_transitions.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -80,7 +80,8 @@ class _SignUpButton extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return TextButton(
-      onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
+      onPressed: () =>
+          Navigator.of(context).push<void>(createRoute(const SignUpPage())),
       style: TextButton.styleFrom(fixedSize: Size(width * 0.9, height * 0.05)),
       child: const Text('Зарегистрироваться'),
     );
@@ -153,7 +154,8 @@ class _LoginButton extends StatelessWidget {
                     : () {},
                 child: Text(
                   'Войти',
-                  style: GoogleFonts.inter().copyWith(color: Colors.white),
+                  style: GoogleFonts.inter()
+                      .copyWith(color: Colors.white, fontSize: 16),
                 ),
               );
       },

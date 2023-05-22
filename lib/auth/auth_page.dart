@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/auth/login/login.dart';
 import 'package:hackathon/auth/sign_up/sign_up.dart';
 import 'package:hackathon/gen/assets.gen.dart';
+import 'package:hackathon/utils/route_transitions.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -25,6 +26,9 @@ class AuthPage extends StatelessWidget {
               Assets.icons.logoName.svg(),
               const Spacer(),
               const _LoginButton(),
+              SizedBox(
+                height: height * 0.02,
+              ),
               const _ForgotPasswordButton(),
               const Spacer(),
               const Text('Впервые у нас?'),
@@ -67,7 +71,8 @@ class _SignUpButton extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return TextButton(
-      onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
+      onPressed: () =>
+          Navigator.of(context).push(createRoute(const SignUpPage())),
       style: TextButton.styleFrom(fixedSize: Size(width * 0.9, height * 0.05)),
       child: const Text('Зарегистрироваться'),
     );
@@ -84,10 +89,14 @@ class _LoginButton extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return ElevatedButton(
-      onPressed: () => Navigator.of(context).push<void>(LoginPage.route()),
+      onPressed: () =>
+          Navigator.of(context).push<void>(createRoute(const LoginPage())),
       style:
           ElevatedButton.styleFrom(fixedSize: Size(width * 0.9, height * 0.07)),
-      child: const Text('Войти'),
+      child: Text(
+        'Войти',
+        style: GoogleFonts.inter().copyWith(color: Colors.white, fontSize: 16),
+      ),
     );
   }
 }
