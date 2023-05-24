@@ -1,2 +1,2 @@
-export 'view/home_page.dart';
+export 'view/home_splash.dart';
 export '../home/widgets/widgets.dart';

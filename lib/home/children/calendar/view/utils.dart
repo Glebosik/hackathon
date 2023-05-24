@@ -23,8 +23,9 @@ final kEvents = LinkedHashMap<DateTime, List<Event>>(
 
 final _kEventSource = {
   kToday: [
-    Event('Встреча с Глебосом', token: '111afsdhert1222234515hsfdg2612356621'),
-    Event('Попить пивка'),
+    const Event('Встреча с Глебосом',
+        token: '111afsdhert1222234515hsfdg2612356621'),
+    const Event('Попить пивка'),
   ],
 };
 

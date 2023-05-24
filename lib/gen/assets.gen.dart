@@ -14,8 +14,27 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/bottomChat.svg
+  SvgGenImage get bottomChat =>
+      const SvgGenImage('assets/icons/bottomChat.svg');
+
+  /// File path: assets/icons/bottomConsult.svg
+  SvgGenImage get bottomConsult =>
+      const SvgGenImage('assets/icons/bottomConsult.svg');
+
+  /// File path: assets/icons/bottomMain.svg
+  SvgGenImage get bottomMain =>
+      const SvgGenImage('assets/icons/bottomMain.svg');
+
+  /// File path: assets/icons/bottomProfile.svg
+  SvgGenImage get bottomProfile =>
+      const SvgGenImage('assets/icons/bottomProfile.svg');
+
   /// File path: assets/icons/cloudLogo.svg
   SvgGenImage get cloudLogo => const SvgGenImage('assets/icons/cloudLogo.svg');
+
+  /// File path: assets/icons/logo.svg
+  SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 
   /// File path: assets/icons/logoName.svg
   SvgGenImage get logoName => const SvgGenImage('assets/icons/logoName.svg');
@@ -27,14 +46,73 @@ class $AssetsIconsGen {
   SvgGenImage get moscowAccess =>
       const SvgGenImage('assets/icons/moscowAccess.svg');
 
+  /// File path: assets/icons/services1.svg
+  SvgGenImage get services1 => const SvgGenImage('assets/icons/services1.svg');
+
+  /// File path: assets/icons/services2.svg
+  SvgGenImage get services2 => const SvgGenImage('assets/icons/services2.svg');
+
+  /// File path: assets/icons/services3.svg
+  SvgGenImage get services3 => const SvgGenImage('assets/icons/services3.svg');
+
+  /// File path: assets/icons/services4.svg
+  SvgGenImage get services4 => const SvgGenImage('assets/icons/services4.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [cloudLogo, logoName, moscow, moscowAccess];
+  List<SvgGenImage> get values => [
+        bottomChat,
+        bottomConsult,
+        bottomMain,
+        bottomProfile,
+        cloudLogo,
+        logo,
+        logoName,
+        moscow,
+        moscowAccess,
+        services1,
+        services2,
+        services3,
+        services4
+      ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/mainList1.png
+  AssetGenImage get mainList1 =>
+      const AssetGenImage('assets/images/mainList1.png');
+
+  /// File path: assets/images/mainList2.png
+  AssetGenImage get mainList2 =>
+      const AssetGenImage('assets/images/mainList2.png');
+
+  /// File path: assets/images/mainList3.png
+  AssetGenImage get mainList3 =>
+      const AssetGenImage('assets/images/mainList3.png');
+
+  /// File path: assets/images/mainList4.png
+  AssetGenImage get mainList4 =>
+      const AssetGenImage('assets/images/mainList4.png');
+
+  /// File path: assets/images/mainList5.png
+  AssetGenImage get mainList5 =>
+      const AssetGenImage('assets/images/mainList5.png');
+
+  /// File path: assets/images/mainList6.png
+  AssetGenImage get mainList6 =>
+      const AssetGenImage('assets/images/mainList6.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [mainList1, mainList2, mainList3, mainList4, mainList5, mainList6];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {

@@ -45,9 +45,7 @@ class AuthPage extends StatelessWidget {
 }
 
 class _ForgotPasswordButton extends StatelessWidget {
-  const _ForgotPasswordButton({
-    super.key,
-  });
+  const _ForgotPasswordButton();
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +60,7 @@ class _ForgotPasswordButton extends StatelessWidget {
 }
 
 class _SignUpButton extends StatelessWidget {
-  const _SignUpButton({
-    super.key,
-  });
+  const _SignUpButton();
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +76,7 @@ class _SignUpButton extends StatelessWidget {
 }
 
 class _LoginButton extends StatelessWidget {
-  const _LoginButton({
-    super.key,
-  });
+  const _LoginButton();
 
   @override
   Widget build(BuildContext context) {
