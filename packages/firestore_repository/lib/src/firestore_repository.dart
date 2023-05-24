@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:cache/cache.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firestore_repository/src/models/models.dart';
@@ -10,16 +9,13 @@ import 'package:meta/meta.dart';
 class FirestoreRepository {
   /// {@macro authentication_repository}
   FirestoreRepository({
-    CacheClient? cache,
     FirebaseFirestore? firestore,
     firebase_auth.FirebaseAuth? firebaseAuth,
-  })  : _cache = cache ?? CacheClient(),
-        _firestore = firestore ?? FirebaseFirestore.instance,
+  })  : _firestore = firestore ?? FirebaseFirestore.instance,
         _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   final FirebaseFirestore _firestore;
   final firebase_auth.FirebaseAuth _firebaseAuth;
-  final CacheClient _cache;
 
   /// Whether or not the current environment is web
   /// Should only be overriden for testing purposes. Otherwise,

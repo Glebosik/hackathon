@@ -1,11 +1,8 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firestore_repository/firestore_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/home/bloc/home_navigation_bloc.dart';
 import 'package:hackathon/home/view/home_view.dart';
-import 'package:page_transition/page_transition.dart';
 
 class HomeSplash extends StatelessWidget {
   const HomeSplash({super.key});
