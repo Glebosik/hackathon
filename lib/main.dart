@@ -10,7 +10,7 @@ import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  initializeDateFormatting('ru_RU');
+  await initializeDateFormatting('ru_RU');
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 

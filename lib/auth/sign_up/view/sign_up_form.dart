@@ -148,9 +148,7 @@ class SignUpForm extends StatelessWidget {
 }
 
 class _CheckBox extends StatefulWidget {
-  const _CheckBox({
-    super.key,
-  });
+  const _CheckBox();
 
   @override
   State<_CheckBox> createState() => _CheckBoxState();
@@ -162,7 +160,6 @@ class _CheckBoxState extends State<_CheckBox> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     return Row(
       children: [
         Checkbox(
@@ -417,7 +414,6 @@ class _SignUpButton extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return BlocBuilder<SignUpCubit, SignUpState>(
       builder: (context, state) {
-        print(state.isValid);
         return state.status.isInProgress
             ? const CircularProgressIndicator()
             : ElevatedButton(

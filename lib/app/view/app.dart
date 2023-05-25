@@ -1,8 +1,10 @@
 import 'package:authentication_repository/authentication_repository.dart';
+import 'package:firestore_repository/firestore_repository.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/app/app.dart';
+import 'package:hackathon/home/children/chat/bloc/chat_bloc.dart';
 import 'package:hackathon/theme.dart';
 
 class App extends StatelessWidget {
@@ -15,12 +17,26 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider.value(
-      value: _authenticationRepository,
-      child: BlocProvider(
-        create: (_) => AppBloc(
-          authenticationRepository: _authenticationRepository,
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider.value(
+          value: _authenticationRepository,
         ),
+        RepositoryProvider(
+          create: (context) => FirestoreRepository(),
+        ),
+      ],
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => AppBloc(
+              authenticationRepository: _authenticationRepository,
+            ),
+          ),
+          BlocProvider(
+            create: (context) => MyChatBloc()..add(ChatInit()),
+          ),
+        ],
         child: const AppView(),
       ),
     );

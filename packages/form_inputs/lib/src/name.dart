@@ -16,6 +16,7 @@ class Name extends FormzInput<String, NameValidationError> {
   /// {@macro name}
   const Name.dirty([super.value = '']) : super.dirty();
 
+  // ignore: unused_field
   static final RegExp _nameRegExp = RegExp(r"^[a-zA-Zа-яА-Я]+");
 
   @override

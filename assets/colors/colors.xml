@@ -4,5 +4,7 @@
     <color name="white">ffffff</color>
     <color name="orange">E23C27</color>
     <color name="backgroundOrange">FDF3F0</color>
+    <color name="backgroundOtherOrange">FFDACF</color>
     <color name="hyperlinkOrange">F7634F</color>
+    <color name="green">0BA992</color>
 </resources>

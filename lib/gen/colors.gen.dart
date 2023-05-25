@@ -16,6 +16,12 @@ class ColorName {
   /// Color: FDF3F0
   static const Color backgroundOrange = Color(0xFFFDF3F0);
 
+  /// Color: FFDACF
+  static const Color backgroundOtherOrange = Color(0xFFFFDACF);
+
+  /// Color: 0BA992
+  static const Color green = Color(0xFF0BA992);
+
   /// Color: F7634F
   static const Color hyperlinkOrange = Color(0xFFF7634F);
 

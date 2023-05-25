@@ -14,8 +14,49 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/assistance.svg
+  SvgGenImage get assistance =>
+      const SvgGenImage('assets/icons/assistance.svg');
+
+  /// File path: assets/icons/botLogo.svg
+  SvgGenImage get botLogo => const SvgGenImage('assets/icons/botLogo.svg');
+
+  /// File path: assets/icons/bottomChat.svg
+  SvgGenImage get bottomChat =>
+      const SvgGenImage('assets/icons/bottomChat.svg');
+
+  /// File path: assets/icons/bottomConsult.svg
+  SvgGenImage get bottomConsult =>
+      const SvgGenImage('assets/icons/bottomConsult.svg');
+
+  /// File path: assets/icons/bottomMain.svg
+  SvgGenImage get bottomMain =>
+      const SvgGenImage('assets/icons/bottomMain.svg');
+
+  /// File path: assets/icons/bottomProfile.svg
+  SvgGenImage get bottomProfile =>
+      const SvgGenImage('assets/icons/bottomProfile.svg');
+
+  /// File path: assets/icons/chatActions.svg
+  SvgGenImage get chatActions =>
+      const SvgGenImage('assets/icons/chatActions.svg');
+
+  /// File path: assets/icons/chatHideActions.svg
+  SvgGenImage get chatHideActions =>
+      const SvgGenImage('assets/icons/chatHideActions.svg');
+
   /// File path: assets/icons/cloudLogo.svg
   SvgGenImage get cloudLogo => const SvgGenImage('assets/icons/cloudLogo.svg');
+
+  /// File path: assets/icons/fingerprint.svg
+  SvgGenImage get fingerprint =>
+      const SvgGenImage('assets/icons/fingerprint.svg');
+
+  /// File path: assets/icons/list-task.svg
+  SvgGenImage get listTask => const SvgGenImage('assets/icons/list-task.svg');
+
+  /// File path: assets/icons/logo.svg
+  SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 
   /// File path: assets/icons/logoName.svg
   SvgGenImage get logoName => const SvgGenImage('assets/icons/logoName.svg');
@@ -27,14 +68,159 @@ class $AssetsIconsGen {
   SvgGenImage get moscowAccess =>
       const SvgGenImage('assets/icons/moscowAccess.svg');
 
+  /// File path: assets/icons/mosruCircleLogo.svg
+  SvgGenImage get mosruCircleLogo =>
+      const SvgGenImage('assets/icons/mosruCircleLogo.svg');
+
+  /// File path: assets/icons/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/icons/notification.svg');
+
+  /// File path: assets/icons/recordMessage.svg
+  SvgGenImage get recordMessage =>
+      const SvgGenImage('assets/icons/recordMessage.svg');
+
+  /// File path: assets/icons/recordingMessage.svg
+  SvgGenImage get recordingMessage =>
+      const SvgGenImage('assets/icons/recordingMessage.svg');
+
+  /// File path: assets/icons/security.svg
+  SvgGenImage get security => const SvgGenImage('assets/icons/security.svg');
+
+  /// File path: assets/icons/sendMessage.svg
+  SvgGenImage get sendMessage =>
+      const SvgGenImage('assets/icons/sendMessage.svg');
+
+  /// File path: assets/icons/services1.svg
+  SvgGenImage get services1 => const SvgGenImage('assets/icons/services1.svg');
+
+  /// File path: assets/icons/services2.svg
+  SvgGenImage get services2 => const SvgGenImage('assets/icons/services2.svg');
+
+  /// File path: assets/icons/services3.svg
+  SvgGenImage get services3 => const SvgGenImage('assets/icons/services3.svg');
+
+  /// File path: assets/icons/services4.svg
+  SvgGenImage get services4 => const SvgGenImage('assets/icons/services4.svg');
+
+  /// File path: assets/icons/statusApproved.svg
+  SvgGenImage get statusApproved =>
+      const SvgGenImage('assets/icons/statusApproved.svg');
+
+  /// File path: assets/icons/statusDeclined.svg
+  SvgGenImage get statusDeclined =>
+      const SvgGenImage('assets/icons/statusDeclined.svg');
+
+  /// File path: assets/icons/statusWaiting.svg
+  SvgGenImage get statusWaiting =>
+      const SvgGenImage('assets/icons/statusWaiting.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [cloudLogo, logoName, moscow, moscowAccess];
+  List<SvgGenImage> get values => [
+        assistance,
+        botLogo,
+        bottomChat,
+        bottomConsult,
+        bottomMain,
+        bottomProfile,
+        chatActions,
+        chatHideActions,
+        cloudLogo,
+        fingerprint,
+        listTask,
+        logo,
+        logoName,
+        moscow,
+        moscowAccess,
+        mosruCircleLogo,
+        notification,
+        recordMessage,
+        recordingMessage,
+        security,
+        sendMessage,
+        services1,
+        services2,
+        services3,
+        services4,
+        statusApproved,
+        statusDeclined,
+        statusWaiting
+      ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/mainList1.png
+  AssetGenImage get mainList1 =>
+      const AssetGenImage('assets/images/mainList1.png');
+
+  /// File path: assets/images/mainList1_1.png
+  AssetGenImage get mainList11 =>
+      const AssetGenImage('assets/images/mainList1_1.png');
+
+  /// File path: assets/images/mainList2.png
+  AssetGenImage get mainList2 =>
+      const AssetGenImage('assets/images/mainList2.png');
+
+  /// File path: assets/images/mainList2_1.png
+  AssetGenImage get mainList21 =>
+      const AssetGenImage('assets/images/mainList2_1.png');
+
+  /// File path: assets/images/mainList3.png
+  AssetGenImage get mainList3 =>
+      const AssetGenImage('assets/images/mainList3.png');
+
+  /// File path: assets/images/mainList3_1.png
+  AssetGenImage get mainList31 =>
+      const AssetGenImage('assets/images/mainList3_1.png');
+
+  /// File path: assets/images/mainList4.png
+  AssetGenImage get mainList4 =>
+      const AssetGenImage('assets/images/mainList4.png');
+
+  /// File path: assets/images/mainList4_1.png
+  AssetGenImage get mainList41 =>
+      const AssetGenImage('assets/images/mainList4_1.png');
+
+  /// File path: assets/images/mainList5.png
+  AssetGenImage get mainList5 =>
+      const AssetGenImage('assets/images/mainList5.png');
+
+  /// File path: assets/images/mainList5_1.png
+  AssetGenImage get mainList51 =>
+      const AssetGenImage('assets/images/mainList5_1.png');
+
+  /// File path: assets/images/mainList6.png
+  AssetGenImage get mainList6 =>
+      const AssetGenImage('assets/images/mainList6.png');
+
+  /// File path: assets/images/mainList6_1.png
+  AssetGenImage get mainList61 =>
+      const AssetGenImage('assets/images/mainList6_1.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        mainList1,
+        mainList11,
+        mainList2,
+        mainList21,
+        mainList3,
+        mainList31,
+        mainList4,
+        mainList41,
+        mainList5,
+        mainList51,
+        mainList6,
+        mainList61
+      ];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
