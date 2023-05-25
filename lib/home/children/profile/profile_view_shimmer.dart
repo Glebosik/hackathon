@@ -1,18 +1,16 @@
-import 'package:firestore_repository/firestore_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/app/app.dart';
 import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/gen/colors.gen.dart';
+import 'package:hackathon/home/children/profile/widgets/card_shimmer.dart';
 import 'package:hackathon/home/children/profile/widgets/list_card.dart';
-import 'package:hackathon/home/children/profile/widgets/widgets.dart';
 import 'package:hackathon/home/widgets/widgets.dart';
 import 'package:hackathon/text_styles.dart';
 
-class ProfileView extends StatelessWidget {
-  const ProfileView({super.key, required this.user, required this.bottomKey});
+class ProfileViewShimmer extends StatelessWidget {
+  const ProfileViewShimmer({super.key, required this.bottomKey});
 
-  final User user;
   final Key bottomKey;
   @override
   Widget build(BuildContext context) {
@@ -24,10 +22,7 @@ class ProfileView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ProfileHeader(
-            user: user,
-            height: height * 0.2,
-          ),
+          CardShimmer(width: width * 0.97, height: height * 0.2),
           SizedBox(height: height * 0.02),
           Expanded(
             child: Column(

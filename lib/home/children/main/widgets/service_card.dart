@@ -24,13 +24,13 @@ class ServiceCard extends StatelessWidget {
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
-          padding: EdgeInsets.all(width * 0.01),
+          padding: EdgeInsets.all(width * 0.02),
           child: Row(
             children: [
-              leading.svg(width: width * 0.3),
+              leading.svg(width: width * 0.2),
               SizedBox(width: width * 0.05),
               SizedBox(
-                width: width * 0.55,
+                width: width * 0.50,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -40,10 +40,12 @@ class ServiceCard extends StatelessWidget {
                           .copyWith(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: height * 0.01),
-                    Text(
-                      subtitle,
-                      style: GoogleFonts.inter()
-                          .copyWith(fontSize: 14, color: Colors.black54),
+                    Flexible(
+                      child: Text(
+                        subtitle,
+                        style: GoogleFonts.inter()
+                            .copyWith(fontSize: 14, color: Colors.black54),
+                      ),
                     ),
                   ],
                 ),

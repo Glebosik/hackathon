@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/gen/assets.gen.dart';
-import 'package:hackathon/home/widgets/text_over_image.dart';
+
+import 'widgets.dart';
 
 class ResourcesListView extends StatelessWidget {
   const ResourcesListView({

@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:hackathon/gen/assets.gen.dart';
-import 'package:hackathon/home/widgets/widgets.dart';
+
+import 'widgets.dart';
 
 class ServiceList extends StatefulWidget {
   const ServiceList({
@@ -16,7 +17,7 @@ class ServiceList extends StatefulWidget {
 class _ServiceListState extends State<ServiceList> {
   late Timer _timer;
   final _pageController = PageController(
-    viewportFraction: 0.98,
+    viewportFraction: 1,
     initialPage: 0,
   );
 
