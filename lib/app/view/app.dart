@@ -4,16 +4,21 @@ import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/app/app.dart';
+import 'package:hackathon/home/children/calendar/bloc/calendar_bloc.dart';
 import 'package:hackathon/home/children/chat/bloc/chat_bloc.dart';
+import 'package:hackathon/home/children/check_in/bloc/check_in_bloc.dart';
 import 'package:hackathon/theme.dart';
 
 class App extends StatelessWidget {
   const App({
     required AuthenticationRepository authenticationRepository,
+    required FirestoreRepository firestoreRepository,
     super.key,
-  }) : _authenticationRepository = authenticationRepository;
+  })  : _authenticationRepository = authenticationRepository,
+        _firestoreRepository = firestoreRepository;
 
   final AuthenticationRepository _authenticationRepository;
+  final FirestoreRepository _firestoreRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +27,8 @@ class App extends StatelessWidget {
         RepositoryProvider.value(
           value: _authenticationRepository,
         ),
-        RepositoryProvider(
-          create: (context) => FirestoreRepository(),
+        RepositoryProvider.value(
+          value: _firestoreRepository,
         ),
       ],
       child: MultiBlocProvider(
@@ -36,6 +41,13 @@ class App extends StatelessWidget {
           BlocProvider(
             create: (context) => MyChatBloc()..add(ChatInit()),
           ),
+          BlocProvider(
+              create: (context) =>
+                  CheckInBloc(firestoreRepository: _firestoreRepository)
+                    ..add(CheckInFetchKno())),
+          BlocProvider(
+              create: (context) =>
+                  CalendarBloc(firestoreRepository: _firestoreRepository))
         ],
         child: const AppView(),
       ),

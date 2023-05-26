@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 
+//TODO: ДОРАБОТАТЬ
 class ServiceCard extends StatelessWidget {
   ServiceCard({
     super.key,

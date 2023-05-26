@@ -198,6 +198,8 @@ class SignUpCubit extends Cubit<SignUpState> {
         'thirdName': state.thirdName?.value,
         'question': state.answer.value,
         'answer': state.answer.value,
+        'approved': true,
+        'updatedAt': DateTime.now(),
       });
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on SignUpWithEmailAndPasswordFailure catch (e) {

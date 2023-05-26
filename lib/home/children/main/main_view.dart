@@ -18,11 +18,11 @@ class MainView extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Assets.icons.logoName.svg(height: 56),
+        title: Assets.icons.logoName.svg(height: 48),
         actions: <Widget>[
           IconButton(
             splashRadius: 24,
-            icon: const Icon(Icons.search),
+            icon: Assets.icons.search.svg(),
             onPressed: () {},
           )
         ],
@@ -33,16 +33,11 @@ class MainView extends StatelessWidget {
           children: [
             const SizedBox(height: 32),
             SizedBox(
-              height: height * 0.2,
+              height: height * 0.180,
               width: width,
               child: const ResourcesListView(),
             ),
             const SizedBox(height: 16),
-            SizedBox(
-              height: height * 0.3,
-              width: width * 0.95,
-              child: const ServiceList(),
-            ),
             const SizedBox(height: 32),
             SizedBox(
               width: width * 0.9,

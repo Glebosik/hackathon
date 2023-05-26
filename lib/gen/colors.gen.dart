@@ -22,6 +22,9 @@ class ColorName {
   /// Color: 0BA992
   static const Color green = Color(0xFF0BA992);
 
+  /// Color: 79CFC2
+  static const Color greenLight = Color(0xFF79CFC2);
+
   /// Color: F7634F
   static const Color hyperlinkOrange = Color(0xFFF7634F);
 

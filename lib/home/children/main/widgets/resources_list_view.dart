@@ -17,43 +17,43 @@ class ResourcesListView extends StatelessWidget {
       children: [
         SizedBox(width: width * 0.05),
         TextOverImage(
-          image: Assets.images.mainList1
-              .image(width: width, height: height, fit: BoxFit.fill),
+          image: Assets.images.mainList11
+              .image(width: width, height: height, fit: BoxFit.cover),
           text: 'Поддержка бизнеса во время пандемии',
           link: 'https://www.mos.ru/city/projects/covid-19/business/',
         ),
         SizedBox(width: width * 0.02),
         TextOverImage(
-          image: Assets.images.mainList2
-              .image(width: width, height: height, fit: BoxFit.fill),
+          image: Assets.images.mainList21
+              .image(width: width, height: height, fit: BoxFit.cover),
           text: 'Инвестиционный портал Москвы',
           link: 'https://investmoscow.ru/',
         ),
         SizedBox(width: width * 0.02),
         TextOverImage(
-          image: Assets.images.mainList3
-              .image(width: width, height: height, fit: BoxFit.fill),
+          image: Assets.images.mainList31
+              .image(width: width, height: height, fit: BoxFit.cover),
           text: 'Штаб по защите бизнеса',
           link: 'https://shtab.mos.ru/',
         ),
         SizedBox(width: width * 0.02),
         TextOverImage(
-          image: Assets.images.mainList4
-              .image(width: width, height: height, fit: BoxFit.fill),
+          image: Assets.images.mainList41
+              .image(width: width, height: height, fit: BoxFit.cover),
           text: 'Портал поставщиков',
           link: 'https://zakupki.mos.ru/',
         ),
         SizedBox(width: width * 0.02),
         TextOverImage(
-          image: Assets.images.mainList5
-              .image(width: width, height: height, fit: BoxFit.fill),
+          image: Assets.images.mainList51
+              .image(width: width, height: height, fit: BoxFit.cover),
           text: 'Портал «Малый бизнес Москвы»',
           link: 'https://mbm.mos.ru/',
         ),
         SizedBox(width: width * 0.02),
         TextOverImage(
-          image: Assets.images.mainList6
-              .image(width: width, height: height, fit: BoxFit.fill),
+          image: Assets.images.mainList61
+              .image(width: width, height: height, fit: BoxFit.cover),
           text: 'Московский инновационный кластер',
           link: 'https://i.moscow/',
         ),

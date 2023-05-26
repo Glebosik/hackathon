@@ -1,5 +1,6 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firestore_repository/firestore_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,13 +15,14 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  final firestoreRepository = FirestoreRepository();
   final authenticationRepository = AuthenticationRepository();
   await authenticationRepository.user.first;
-
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(statusBarColor: Colors.white),
   );
 
+  //TODO
   List<SvgAssetLoader> loaders = [];
   loaders.add(SvgAssetLoader(Assets.icons.cloudLogo.path));
   loaders.add(SvgAssetLoader(Assets.icons.logoName.path));
@@ -31,5 +33,8 @@ void main() async {
         loaders[i].cacheKey(null), () => loaders[i].loadBytes(null));
   }
 
-  runApp(App(authenticationRepository: authenticationRepository));
+  runApp(App(
+    authenticationRepository: authenticationRepository,
+    firestoreRepository: firestoreRepository,
+  ));
 }

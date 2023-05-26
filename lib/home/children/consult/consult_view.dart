@@ -45,7 +45,7 @@ class ConsultView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     elevation: 0,
                     color: ColorName.backgroundOrange,

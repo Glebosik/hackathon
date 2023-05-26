@@ -9,6 +9,7 @@ class HomeNavigationBloc
     extends Bloc<HomeNavigationEvent, HomeNavigationState> {
   final FirestoreRepository firestoreRepository;
   int currentIndex = 0;
+  User? user;
 
   HomeNavigationBloc({required this.firestoreRepository})
       : super(HomeNavigationInitial()) {
@@ -30,11 +31,15 @@ class HomeNavigationBloc
       } else if (event.index == 3) {
         emit(ProfilePageLoading());
         try {
-          User? user = await firestoreRepository.currentUserData;
-          if (user != null) {
-            emit(ProfilePageLoaded(user));
+          if (user == null) {
+            user = await firestoreRepository.currentUserData;
+            if (user != null) {
+              emit(ProfilePageLoaded(user!));
+            } else {
+              emit(ProfilePageFail());
+            }
           } else {
-            emit(ProfilePageFail());
+            emit(ProfilePageLoaded(user!));
           }
         } catch (e) {
           emit(ProfilePageFail());

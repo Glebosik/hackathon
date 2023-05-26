@@ -1,7 +1,5 @@
 import 'package:firestore_repository/firestore_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hackathon/app/app.dart';
 import 'package:hackathon/text_styles.dart';
 
 import 'widgets.dart';
@@ -18,7 +16,6 @@ class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userAuth = context.select((AppBloc bloc) => bloc.state.user);
     return SizedBox(
       height: height,
       width: MediaQuery.of(context).size.width * 0.97,
@@ -37,7 +34,7 @@ class ProfileHeader extends StatelessWidget {
                   Row(
                     children: [
                       Avatar(
-                        photo: userAuth.photo,
+                        secondName: user.secondName ?? '',
                         avatarSize: 24,
                       ),
                       const SizedBox(width: 16),

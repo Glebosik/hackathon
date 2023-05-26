@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/arrowDown.svg
+  SvgGenImage get arrowDown => const SvgGenImage('assets/icons/arrowDown.svg');
+
   /// File path: assets/icons/assistance.svg
   SvgGenImage get assistance =>
       const SvgGenImage('assets/icons/assistance.svg');
@@ -84,6 +87,9 @@ class $AssetsIconsGen {
   SvgGenImage get recordingMessage =>
       const SvgGenImage('assets/icons/recordingMessage.svg');
 
+  /// File path: assets/icons/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
+
   /// File path: assets/icons/security.svg
   SvgGenImage get security => const SvgGenImage('assets/icons/security.svg');
 
@@ -117,6 +123,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+        arrowDown,
         assistance,
         botLogo,
         bottomChat,
@@ -136,6 +143,7 @@ class $AssetsIconsGen {
         notification,
         recordMessage,
         recordingMessage,
+        search,
         security,
         sendMessage,
         services1,

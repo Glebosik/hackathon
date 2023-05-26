@@ -6,3 +6,10 @@ abstract class CalendarEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class CalendarLoad extends CalendarEvent {
+  final String knoId;
+  const CalendarLoad(this.knoId);
+  @override
+  List<Object> get props => [knoId];
+}

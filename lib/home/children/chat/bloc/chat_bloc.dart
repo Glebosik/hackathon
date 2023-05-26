@@ -25,6 +25,7 @@ class MyChatBloc extends Bloc<MyChatEvent, MyChatState> {
           connection = await Socket.connect('176.119.147.26', 3777,
               timeout: const Duration(seconds: 5));
           connection.listen((event) {
+            print(utf8.decode(event));
             add(ChatMessageReceive(event));
           });
           emit(ChatInitialized(messages));

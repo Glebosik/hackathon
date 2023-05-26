@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/gen/assets.gen.dart';
+import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/home/bloc/home_navigation_bloc.dart';
 import 'package:hackathon/home/children/chat/bloc/chat_bloc.dart';
 import 'package:hackathon/home/children/chat/widgets/chat_command_panel_placeholder.dart';
@@ -35,35 +36,39 @@ class _ChatViewState extends State<ChatView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          padding: EdgeInsets.zero,
-          splashRadius: 24,
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            context.read<HomeNavigationBloc>().add(const PageTapped(0));
-          },
-        ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Assets.icons.botLogo.svg(),
+            IconButton(
+              padding: EdgeInsets.zero,
+              splashRadius: 24,
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                context.read<HomeNavigationBloc>().add(const PageTapped(0));
+              },
+            ),
+            Assets.icons.botLogo.svg(height: 40),
+            const SizedBox(width: 16),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Константин',
-                  style: TextStyles.black16,
+                  style:
+                      TextStyles.black16.copyWith(fontWeight: FontWeight.w500),
                 ),
                 Text(
                   'Ваш личный ассистент',
-                  style: TextStyles.black14.copyWith(color: Colors.grey),
+                  style: TextStyles.black14.copyWith(
+                      color: Colors.grey, fontWeight: FontWeight.normal),
                 ),
               ],
             ),
+            const Spacer(),
             IconButton(
               splashRadius: 24,
               onPressed: () {},
-              icon: const Icon(Icons.search),
+              icon: Assets.icons.search.svg(),
             )
           ],
         ),
@@ -79,7 +84,9 @@ class _ChatViewState extends State<ChatView> {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
-                      const CircularProgressIndicator(),
+                      const CircularProgressIndicator(
+                        color: ColorName.orange,
+                      ),
                       const SizedBox(height: 16),
                       Text(
                         'Константин готовится ответить на ваши вопросы',
@@ -90,9 +97,7 @@ class _ChatViewState extends State<ChatView> {
                   ),
                 ),
                 const Spacer(),
-                ChatCommandPanel(
-                  controller: _controller,
-                ),
+                const ChatCommandPanelPlaceholder(textFieldLabel: 'Сообщение'),
               ],
             );
           } else if (state is ChatInitialized) {
@@ -155,7 +160,7 @@ class _ChatViewState extends State<ChatView> {
             return Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ChatBody(
+                ChatBodyWaiting(
                   messages: state.messages,
                 ),
                 const ChatCommandPanelPlaceholder(
