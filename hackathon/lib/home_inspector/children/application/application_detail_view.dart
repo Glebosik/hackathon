@@ -118,7 +118,6 @@ class ApplicationDetailView extends StatelessWidget {
                 context
                     .read<FirestoreRepository>()
                     .declineApplication(application);
-
                 Navigator.of(context).pop('Update');
               },
               child: Text(

@@ -192,6 +192,25 @@ class FirestoreRepository {
     });
   }
 
+  Future<void> declineApproved(Application application) async {
+    final String docId =
+        '${application.applicantId} ${application.knoId} ${application.dateStart}';
+    _firestore
+        .doc('inspectors/${application.inspectorId}/approved/$docId')
+        .delete();
+    _firestore
+        .doc('users/${application.applicantId}/applications/$docId')
+        .update({
+      'status': 'Отклонена',
+    });
+    _firestore
+        .doc('kno/${application.knoId}/freeSlots/${application.dateStart}')
+        .set({
+      'dateStart': application.dateStart,
+      'dateEnd': application.dateEnd,
+    });
+  }
+
   Future<Map<String, dynamic>> getConferenceData() async {
     final docRef = await _firestore.doc('agora/agora').get();
     return docRef.data() as Map<String, dynamic>;

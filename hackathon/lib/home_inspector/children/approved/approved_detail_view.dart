@@ -165,9 +165,9 @@ class ApprovedDetailView extends StatelessWidget {
                                     if (isToDelete is bool &&
                                         isToDelete == true &&
                                         context.mounted) {
-                                      context
+                                      await context
                                           .read<FirestoreRepository>()
-                                          .declineApplication(application);
+                                          .declineApproved(application);
                                       Navigator.of(context).pop('Update');
                                     }
                                   },
