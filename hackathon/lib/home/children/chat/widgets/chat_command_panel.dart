@@ -90,10 +90,10 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-              iconSize: width * 0.13,
+              iconSize: width * 0.10,
               splashRadius: 20,
               onPressed: () {},
-              icon: Assets.icons.chatActions.svg(height: width * 0.13),
+              icon: Assets.icons.chatActions.svg(height: width * 0.10),
             ),
             SizedBox(
               width: width * 0.6,
@@ -121,7 +121,7 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
             ),
             isTyping
                 ? IconButton(
-                    iconSize: width * 0.13,
+                    iconSize: width * 0.10,
                     splashRadius: 20,
                     onPressed: () {
                       chatBloc.add(ChatMessageSend(Message(
@@ -131,11 +131,11 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                       widget._controller.clear();
                       isTyping = false;
                     },
-                    icon: Assets.icons.sendMessage.svg(height: width * 0.13),
+                    icon: Assets.icons.sendMessage.svg(height: width * 0.10),
                   )
                 : isRecording
                     ? IconButton(
-                        iconSize: width * 0.13,
+                        iconSize: width * 0.10,
                         splashRadius: 20,
                         onPressed: () {
                           setState(() {
@@ -146,14 +146,16 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                             }
                           });
                         },
-                        icon: SpinKitWave(
-                          itemCount: 7,
-                          color: ColorName.hyperlinkOrange,
-                          size: width * 0.1,
-                        ),
+                        icon: ClipRRect(
+                            borderRadius: BorderRadius.circular(40),
+                            child: SpinKitWave(
+                              color: ColorName.hyperlinkOrange,
+                              itemCount: 7,
+                              size: width * 0.10,
+                            )),
                       )
                     : IconButton(
-                        iconSize: width * 0.13,
+                        iconSize: width * 0.10,
                         splashRadius: 20,
                         onPressed: () {
                           setState(() {
@@ -162,7 +164,7 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                           });
                         },
                         icon: Assets.icons.recordMessage
-                            .svg(height: width * 0.13),
+                            .svg(height: width * 0.10),
                       ),
           ],
         ),

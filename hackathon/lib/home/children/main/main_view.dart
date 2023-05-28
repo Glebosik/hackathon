@@ -61,10 +61,12 @@ class MainView extends StatelessWidget {
                     children: [
                       Text(
                         'Дополнительные сервисы',
-                        style: TextStyles.black16bold,
+                        style: TextStyles.black16,
                       ),
                       const SizedBox(height: 24),
-                      const ServiceButton(text: 'Записаться на приём'),
+                      const ServiceButton(
+                        text: 'Записаться на приём',
+                      ),
                       const SizedBox(height: 16),
                       const ServiceButton(
                           text: 'Электронная приёмная правительства Москвы'),

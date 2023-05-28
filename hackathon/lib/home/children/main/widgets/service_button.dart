@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/gen/colors.gen.dart';
+import 'package:hackathon/text_styles.dart';
 
 class ServiceButton extends StatelessWidget {
   const ServiceButton({
@@ -37,10 +38,7 @@ class ServiceButton extends StatelessWidget {
             Expanded(
               child: Text(
                 text,
-                style: GoogleFonts.inter().copyWith(
-                  fontSize: 16,
-                  color: Colors.white,
-                ),
+                style: TextStyles.white14.copyWith(fontWeight: FontWeight.w500),
               ),
             ),
             const Icon(
