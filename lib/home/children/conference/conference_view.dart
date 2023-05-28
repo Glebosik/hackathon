@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -102,10 +101,6 @@ class _ConferenceViewState extends State<ConferenceView> {
     });
   }
 
-  Future<void> _leaveChannel() async {
-    await _engine.leaveChannel();
-  }
-
   Future<void> _dispose() async {
     await _engine.leaveChannel();
     await _engine.release();
@@ -121,7 +116,6 @@ class _ConferenceViewState extends State<ConferenceView> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -145,10 +139,10 @@ class _ConferenceViewState extends State<ConferenceView> {
                                 ? AgoraVideoView(
                                     controller: VideoViewController(
                                       rtcEngine: _engine,
-                                      canvas: VideoCanvas(uid: 0),
+                                      canvas: const VideoCanvas(uid: 0),
                                     ),
                                   )
-                                : Icon(Icons.videocam_off)
+                                : const Icon(Icons.videocam_off)
                             : CircularProgressIndicator(
                                 color: widget.uid == 1
                                     ? ColorName.orange

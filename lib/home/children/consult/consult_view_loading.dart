@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/home/bloc/home_navigation_bloc.dart';
 import 'package:hackathon/home/children/check_in/check_in_view.dart';
 import 'package:hackathon/home/widgets/widgets.dart';
 import 'package:hackathon/text_styles.dart';
 import 'package:hackathon/utils/route_transitions.dart';
-import 'package:shimmer/shimmer.dart';
 
 class ConsultViewLoading extends StatelessWidget {
   const ConsultViewLoading({super.key, required this.bottomKey});
