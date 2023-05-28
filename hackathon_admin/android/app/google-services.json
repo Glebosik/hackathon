@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "5820113346",
+    "project_id": "hackathon-34912",
+    "storage_bucket": "hackathon-34912.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5820113346:android:dde5f45bab1b0ea495b65b",
+        "android_client_info": {
+          "package_name": "com.example.hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5820113346-fufq4q34ks8cdjpsqvglp6tsib9oe9dl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjlz83j2kycotkx96hoUP6UFLJZM7cp4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5820113346-fufq4q34ks8cdjpsqvglp6tsib9oe9dl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "5820113346-vje5u6pc0e03t1441bebj1msd3ur23dv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hackathon"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5820113346:android:fd8a88b6c9e090a695b65b",
+        "android_client_info": {
+          "package_name": "com.example.hackathon_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5820113346-fufq4q34ks8cdjpsqvglp6tsib9oe9dl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjlz83j2kycotkx96hoUP6UFLJZM7cp4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5820113346-fufq4q34ks8cdjpsqvglp6tsib9oe9dl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "5820113346-vje5u6pc0e03t1441bebj1msd3ur23dv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hackathon"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
