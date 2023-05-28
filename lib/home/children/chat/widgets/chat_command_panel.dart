@@ -21,7 +21,7 @@ class ChatCommandPanel extends StatefulWidget {
 }
 
 class _ChatCommandPanelState extends State<ChatCommandPanel> {
-  SpeechToText _speechToText = SpeechToText();
+  final SpeechToText _speechToText = SpeechToText();
   String _lastWords = '';
   bool isActions = false;
   bool isTyping = false;
@@ -30,12 +30,12 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _initSpeech();
   }
 
   void _initSpeech() async {
+    // ignore: unused_local_variable
     Map<Permission, PermissionStatus> statuses = await [
       Permission.microphone,
       Permission.bluetooth,
@@ -88,12 +88,13 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
+              iconSize: width * 0.13,
               splashRadius: 20,
               onPressed: () {},
-              icon: Assets.icons.chatActions.svg(),
+              icon: Assets.icons.chatActions.svg(height: width * 0.13),
             ),
             SizedBox(
-              width: width * 0.7,
+              width: width * 0.6,
               child: TextField(
                 textCapitalization: TextCapitalization.sentences,
                 controller: widget._controller,
@@ -110,13 +111,15 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                   floatingLabelBehavior: FloatingLabelBehavior.never,
                   labelStyle: TextStyles.black14.copyWith(color: Colors.grey),
                   labelText: 'Сообщение',
-                  contentPadding: EdgeInsets.fromLTRB(
-                      width * 0.05, height * 0.02, width * 0.05, height * 0.02),
+                  isDense: true,
+                  contentPadding: EdgeInsets.fromLTRB(width * 0.05,
+                      height * 0.015, width * 0.05, height * 0.015),
                 ),
               ),
             ),
             isTyping
                 ? IconButton(
+                    iconSize: width * 0.13,
                     splashRadius: 20,
                     onPressed: () {
                       chatBloc.add(ChatMessageSend(Message(
@@ -126,10 +129,11 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                       widget._controller.clear();
                       isTyping = false;
                     },
-                    icon: Assets.icons.sendMessage.svg(),
+                    icon: Assets.icons.sendMessage.svg(height: width * 0.13),
                   )
                 : isRecording
                     ? IconButton(
+                        iconSize: width * 0.13,
                         splashRadius: 20,
                         onPressed: () {
                           setState(() {
@@ -140,9 +144,11 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                             }
                           });
                         },
-                        icon: Assets.icons.recordingMessage.svg(),
+                        icon: Assets.icons.recordingMessage
+                            .svg(height: width * 0.13),
                       )
                     : IconButton(
+                        iconSize: width * 0.13,
                         splashRadius: 20,
                         onPressed: () {
                           setState(() {
@@ -150,7 +156,8 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                             isRecording = true;
                           });
                         },
-                        icon: Assets.icons.recordMessage.svg(),
+                        icon: Assets.icons.recordMessage
+                            .svg(height: width * 0.13),
                       ),
           ],
         ),

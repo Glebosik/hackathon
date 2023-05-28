@@ -23,23 +23,23 @@ class TextOverImage extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Container(
-              width: height * 0.2,
-              height: height * 0.175,
+              width: height * 0.180,
+              height: height * 0.160,
               alignment: Alignment.center,
               child: image,
             ),
           ),
           Container(
             padding: EdgeInsets.all(width * 0.02),
-            width: height * 0.2,
-            height: height * 0.175,
+            width: height * 0.180,
+            height: height * 0.160,
             alignment: Alignment.bottomLeft,
             child: Text(
               text,
               style: GoogleFonts.inter().copyWith(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
+                color: Colors.white,
+                fontSize: 10,
+              ),
             ),
           )
         ],

@@ -31,3 +31,8 @@ class ChatMessageSent extends MyChatState {
   final List<Message> messages;
   const ChatMessageSent(this.messages);
 }
+
+class ChatBotDisconnected extends MyChatState {
+  final List<Message> messages;
+  const ChatBotDisconnected(this.messages);
+}

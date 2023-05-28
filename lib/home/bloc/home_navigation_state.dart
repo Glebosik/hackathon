@@ -19,7 +19,14 @@ class ChatPageLoaded extends HomeNavigationState {}
 
 class ConsultPageLoading extends HomeNavigationState {}
 
-class ConsultPageLoaded extends HomeNavigationState {}
+class ConsultPageLoaded extends HomeNavigationState {
+  final List<Application> applications;
+  const ConsultPageLoaded(this.applications);
+  @override
+  List<Object> get props => [applications];
+}
+
+class ConsultPageFailed extends HomeNavigationState {}
 
 class ProfilePageLoading extends HomeNavigationState {}
 
@@ -30,4 +37,4 @@ class ProfilePageLoaded extends HomeNavigationState {
   List<Object> get props => [user];
 }
 
-class ProfilePageFail extends HomeNavigationState {}
+class ProfilePageFailed extends HomeNavigationState {}

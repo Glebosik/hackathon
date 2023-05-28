@@ -7,4 +7,9 @@
     <color name="backgroundOtherOrange">FFDACF</color>
     <color name="hyperlinkOrange">F7634F</color>
     <color name="green">0BA992</color>
+    <color name="greenLight">79CFC2</color>
+    <color name="disabledBackground">3C514E</color>
+    <color name="shimmerBase">FDF3F0</color>
+    <color name="shimmerHighlight">FFDACF</color>
+    <color name="greenDark">112B27</color>
 </resources>

@@ -32,7 +32,6 @@ class ProfileView extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                //TODO: добавить иконки
                 ListCard(
                   title: 'Анкетные данные',
                   icon: Assets.icons.listTask.svg(),

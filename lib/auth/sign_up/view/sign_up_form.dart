@@ -16,17 +16,17 @@ class SignUpForm extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return BlocListener<SignUpCubit, SignUpState>(
+      listenWhen: (previous, current) {
+        return (current.status.isFailure && !previous.status.isFailure);
+      },
       listener: (context, state) {
         if (state.status.isSuccess) {
           Navigator.of(context).pop();
         } else if (state.status.isFailure) {
-          //TODO: Сделать нормальное сообщение при ошибке
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              SnackBar(
-                  content:
-                      Text(state.errorMessage ?? 'Ошибка при регистрации')),
+              const SnackBar(content: Text('Ошибка при регистрации')),
             );
         }
       },

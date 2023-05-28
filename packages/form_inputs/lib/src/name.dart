@@ -21,6 +21,6 @@ class Name extends FormzInput<String, NameValidationError> {
 
   @override
   NameValidationError? validator(String? value) {
-    return null; //TODO: Проверка имени
+    return null;
   }
 }

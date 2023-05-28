@@ -10,8 +10,8 @@ class CardShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: ColorName.backgroundOrange,
-      highlightColor: ColorName.backgroundOtherOrange,
+      baseColor: ColorName.shimmerBase,
+      highlightColor: ColorName.shimmerHighlight,
       child: SizedBox(
         width: width,
         height: height,

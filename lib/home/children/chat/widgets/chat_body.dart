@@ -4,17 +4,22 @@ import 'package:hackathon/home/children/chat/bloc/message.dart';
 import 'package:hackathon/text_styles.dart';
 
 class ChatBody extends StatelessWidget {
-  const ChatBody({
+  ChatBody({
     super.key,
     required this.messages,
   });
 
   final List<Message> messages;
+  final ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.jumpTo(controller.position.maxScrollExtent);
+    });
     return Expanded(
       child: ListView.builder(
+        controller: controller,
         itemCount: messages.length,
         shrinkWrap: true,
         padding: const EdgeInsets.only(top: 10, bottom: 10),
