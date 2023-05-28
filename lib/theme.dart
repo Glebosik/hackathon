@@ -37,18 +37,18 @@ final theme = ThemeData(
       elevation: 0,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(ColorName.orange),
-        shape: MaterialStateProperty.all<OutlinedBorder>(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+        style: ElevatedButton.styleFrom(
+      backgroundColor: ColorName.orange,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
       ),
-    ),
+    )),
     textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        overlayColor: MaterialStateProperty.all(ColorName.backgroundOrange),
-        foregroundColor: MaterialStateProperty.all<Color>(ColorName.orange),
-        shape: MaterialStateProperty.all<OutlinedBorder>(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+      style: TextButton.styleFrom(
+        foregroundColor: ColorName.orange,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
       ),
     ),
     chipTheme: ChipThemeData(

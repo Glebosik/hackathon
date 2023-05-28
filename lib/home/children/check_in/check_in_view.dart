@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/home/children/check_in/bloc/check_in_bloc.dart';
 import 'package:hackathon/home/children/check_in/widgets/check_in_body.dart';
+import 'package:hackathon/home/children/check_in/widgets/check_in_body_fail.dart';
 import 'package:hackathon/home/children/check_in/widgets/check_in_body_loading.dart';
 
 class CheckInView extends StatelessWidget {
@@ -12,11 +13,13 @@ class CheckInView extends StatelessWidget {
     return BlocBuilder<CheckInBloc, CheckInState>(
       builder: (context, state) {
         if (state is CheckKnoLoading) {
-          return CheckInBodyLoading();
+          return const CheckInBodyLoading();
         } else if (state is CheckInKnoLoaded) {
           return CheckInBody(knos: state.knos);
-        } else if (state is CheckKnoLoadingFail) {}
-        return const Center(child: Text('pizdyau'));
+        } else if (state is CheckKnoLoadingFail) {
+          return const CheckInFail();
+        }
+        return const Center(child: Text('Упс... что-то пошло не так'));
       },
     );
   }

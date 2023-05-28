@@ -1,5 +1,6 @@
 import 'package:firestore_repository/firestore_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/text_styles.dart';
 
 import 'widgets.dart';
@@ -57,9 +58,9 @@ class ProfileHeader extends StatelessWidget {
                     children: [
                       const SizedBox(width: 60),
                       user.approved
-                          ? const Icon(Icons.check,
-                              color: Colors.green) //TODO: поменять иконки
-                          : const Icon(Icons.check_box_outline_blank),
+                          ? Assets.icons.statusApproved.svg()
+                          : Assets.icons.statusDeclined.svg(),
+                      const SizedBox(width: 5),
                       user.approved
                           ? Text('учетная запись подтверждена',
                               style: TextStyles.black10)

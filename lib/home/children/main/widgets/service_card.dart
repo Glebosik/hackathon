@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/gen/assets.gen.dart';
@@ -5,7 +6,7 @@ import 'package:hackathon/gen/colors.gen.dart';
 
 //TODO: ДОРАБОТАТЬ
 class ServiceCard extends StatelessWidget {
-  ServiceCard({
+  const ServiceCard({
     super.key,
     required this.title,
     required this.subtitle,
@@ -25,13 +26,13 @@ class ServiceCard extends StatelessWidget {
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
-          padding: EdgeInsets.all(width * 0.02),
+          padding: EdgeInsets.fromLTRB(width * 0.02, 20, width * 0.02, 20),
           child: Row(
             children: [
               leading.svg(width: width * 0.2),
               SizedBox(width: width * 0.05),
               SizedBox(
-                width: width * 0.50,
+                width: width * 0.65,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -42,8 +43,10 @@ class ServiceCard extends StatelessWidget {
                     ),
                     SizedBox(height: height * 0.01),
                     Flexible(
-                      child: Text(
+                      child: AutoSizeText(
                         subtitle,
+                        minFontSize: 12,
+                        textAlign: TextAlign.justify,
                         style: GoogleFonts.inter()
                             .copyWith(fontSize: 14, color: Colors.black54),
                       ),

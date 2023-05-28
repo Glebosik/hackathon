@@ -9,6 +9,8 @@ abstract class MyChatEvent extends Equatable {
 
 class ChatInit extends MyChatEvent {}
 
+class ChatReconnect extends MyChatEvent {}
+
 class ChatMessageSend extends MyChatEvent {
   final Message message;
   const ChatMessageSend(this.message);
@@ -17,6 +19,16 @@ class ChatMessageSend extends MyChatEvent {
 class ChatMessageReceive extends MyChatEvent {
   final Uint8List data;
   const ChatMessageReceive(this.data);
+}
+
+class ChatMessageReceiveNoWelcome extends MyChatEvent {
+  final Uint8List data;
+  const ChatMessageReceiveNoWelcome(this.data);
+}
+
+class ChatMessageReceiveContinue extends MyChatEvent {
+  final Uint8List data;
+  const ChatMessageReceiveContinue(this.data);
 }
 
 class ChatClose extends MyChatEvent {}

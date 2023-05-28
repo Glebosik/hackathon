@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/home/bloc/home_navigation_bloc.dart';
+import 'package:hackathon/home/children/chat/bloc/chat_bloc.dart';
 
 class HomeBottomNavBar extends StatelessWidget {
   const HomeBottomNavBar({
@@ -18,6 +19,8 @@ class HomeBottomNavBar extends StatelessWidget {
       selectedItemColor: ColorName.orange,
       unselectedItemColor: ColorName.hyperlinkOrange,
       showUnselectedLabels: true,
+      selectedFontSize: 12,
+      unselectedFontSize: 10,
       currentIndex: homeNavigationBloc.currentIndex,
       items: [
         BottomNavigationBarItem(
@@ -37,7 +40,12 @@ class HomeBottomNavBar extends StatelessWidget {
           icon: Assets.icons.bottomProfile.svg(),
         ),
       ],
-      onTap: (index) => homeNavigationBloc.add(PageTapped(index)),
+      onTap: (index) {
+        if (index == 1) {
+          context.read<MyChatBloc>().add(ChatInit());
+        }
+        homeNavigationBloc.add(PageTapped(index));
+      },
     );
   }
 }

@@ -7,8 +7,6 @@ abstract class HomeNavigationEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class Init extends HomeNavigationEvent {}
-
 class PageTapped extends HomeNavigationEvent {
   final int index;
 
@@ -16,3 +14,5 @@ class PageTapped extends HomeNavigationEvent {
   @override
   List<Object> get props => [index];
 }
+
+class UpdateApplications extends HomeNavigationEvent {}

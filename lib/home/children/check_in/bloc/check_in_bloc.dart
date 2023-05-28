@@ -9,9 +9,7 @@ class CheckInBloc extends Bloc<CheckInEvent, CheckInState> {
   final FirestoreRepository firestoreRepository;
 
   CheckInBloc({required this.firestoreRepository}) : super(CheckInInitial()) {
-    on<CheckInEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<CheckInEvent>((event, emit) {});
 
     on<CheckInFetchKno>((event, emit) async {
       emit(CheckKnoLoading());

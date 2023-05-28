@@ -4,4 +4,3 @@ export 'service_list.dart';
 export 'service_card.dart';
 export 'service_button.dart';
 export 'consult_button.dart';
-export 'home_bottom_nav_bar.dart';

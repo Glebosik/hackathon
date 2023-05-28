@@ -24,6 +24,9 @@ class _CalendarViewState extends State<CalendarView> {
   @override
   void initState() {
     super.initState();
+    if (DateTime.now().isBefore(DateTime(2023, DateTime.june, 1))) {
+      _focusedDay = DateTime(2023, DateTime.june, 1);
+    }
     _selectedDay = _focusedDay;
   }
 
@@ -50,6 +53,7 @@ class _CalendarViewState extends State<CalendarView> {
               )),
             );
           } else if (state is CalendarLoaded) {
+            _availableSlots = state.events[_selectedDay] ?? [];
             return SizedBox(
               height: height * 0.7,
               width: width * 0.95,
@@ -58,7 +62,7 @@ class _CalendarViewState extends State<CalendarView> {
                 children: [
                   TableCalendar<FreeSlot>(
                     locale: 'ru_RU',
-                    firstDay: DateTime(2023, DateTime.may, 1),
+                    firstDay: DateTime(2023, DateTime.june, 1),
                     lastDay: DateTime(2023, DateTime.august, 31),
                     focusedDay: _focusedDay,
                     selectedDayPredicate: (day) => isSameDay(_selectedDay, day),

@@ -8,8 +8,8 @@ import 'package:hackathon/home/children/profile/widgets/list_card.dart';
 import 'package:hackathon/home/widgets/widgets.dart';
 import 'package:hackathon/text_styles.dart';
 
-class ProfileViewShimmer extends StatelessWidget {
-  const ProfileViewShimmer({super.key, required this.bottomKey});
+class ProfileViewLoading extends StatelessWidget {
+  const ProfileViewLoading({super.key, required this.bottomKey});
 
   final Key bottomKey;
   @override
@@ -27,7 +27,6 @@ class ProfileViewShimmer extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                //TODO: добавить иконки
                 ListCard(
                   title: 'Анкетные данные',
                   icon: Assets.icons.listTask.svg(),

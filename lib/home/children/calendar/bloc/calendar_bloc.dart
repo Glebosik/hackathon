@@ -11,9 +11,7 @@ part 'calendar_state.dart';
 class CalendarBloc extends Bloc<CalendarEvent, CalendarState> {
   final FirestoreRepository firestoreRepository;
   CalendarBloc({required this.firestoreRepository}) : super(CalendarInitial()) {
-    on<CalendarEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<CalendarEvent>((event, emit) {});
 
     on<CalendarLoad>((event, emit) async {
       emit(CalendarLoading());

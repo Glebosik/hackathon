@@ -30,7 +30,6 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _initSpeech();
   }

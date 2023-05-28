@@ -90,25 +90,25 @@ class _ServiceListState extends State<ServiceList> {
             title: 'Онлайн калькулятор оценки вероятности нарушений',
             subtitle:
                 'Пройдите опрос и получите набор рекомендаций для устранения возможных нарушений при использовании земельного участка',
-            leading: Assets.icons.services1,
+            leading: Assets.icons.services2,
           ),
           ServiceCard(
             title: 'Жалоба на нарушение моратория на проверки',
             subtitle:
                 'Если в отношении вас проведена или проводится проверка, нарушающая условия моратория, вы можете подать жалобу. Жалоба рассматривается в течение одного рабочего дня',
-            leading: Assets.icons.services1,
+            leading: Assets.icons.services3,
           ),
           ServiceCard(
             title: 'Консультирование',
             subtitle:
                 'С помощью данной услуги Вы можете проконсультироваться с контрольными (надзорными) органами для уточнения интересующей Вас информации по выбранным темам консультирования',
-            leading: Assets.icons.services1,
+            leading: Assets.icons.services4,
           ),
           ServiceCard(
             title: 'Ходатайство об отсрочке исполнения решения',
             subtitle:
                 'При наличии обстоятельств, препятствующих своевременному исполнению решения органа контроля, вы можете направить ходатайство о продлении срока его исполнения',
-            leading: Assets.icons.services1,
+            leading: Assets.icons.services5,
           ),
         ],
       ),

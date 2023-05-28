@@ -26,7 +26,7 @@ class LoginCubit extends Cubit<LoginState> {
     emit(
       state.copyWith(
         password: password,
-        isValid: Formz.validate([state.email, password]),
+        isValid: true,
       ),
     );
   }

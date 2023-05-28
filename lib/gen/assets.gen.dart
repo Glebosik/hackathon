@@ -14,6 +14,18 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/AlertDialog class - material library - Dart API.html
+  String get alertDialogClassMaterialLibraryDartAPI =>
+      'assets/icons/AlertDialog class - material library - Dart API.html';
+
+  /// File path: assets/icons/applicationBackground.svg
+  SvgGenImage get applicationBackground =>
+      const SvgGenImage('assets/icons/applicationBackground.svg');
+
+  /// File path: assets/icons/approvedBackground.svg
+  SvgGenImage get approvedBackground =>
+      const SvgGenImage('assets/icons/approvedBackground.svg');
+
   /// File path: assets/icons/arrowDown.svg
   SvgGenImage get arrowDown => const SvgGenImage('assets/icons/arrowDown.svg');
 
@@ -51,9 +63,32 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cloudLogo.svg
   SvgGenImage get cloudLogo => const SvgGenImage('assets/icons/cloudLogo.svg');
 
+  /// File path: assets/icons/deleteSign.svg
+  SvgGenImage get deleteSign =>
+      const SvgGenImage('assets/icons/deleteSign.svg');
+
+  /// File path: assets/icons/endCall.svg
+  SvgGenImage get endCall => const SvgGenImage('assets/icons/endCall.svg');
+
   /// File path: assets/icons/fingerprint.svg
   SvgGenImage get fingerprint =>
       const SvgGenImage('assets/icons/fingerprint.svg');
+
+  /// File path: assets/icons/inspectorApplications.svg
+  SvgGenImage get inspectorApplications =>
+      const SvgGenImage('assets/icons/inspectorApplications.svg');
+
+  /// File path: assets/icons/inspectorApproved.svg
+  SvgGenImage get inspectorApproved =>
+      const SvgGenImage('assets/icons/inspectorApproved.svg');
+
+  /// File path: assets/icons/inspectorLogo.svg
+  SvgGenImage get inspectorLogo =>
+      const SvgGenImage('assets/icons/inspectorLogo.svg');
+
+  /// File path: assets/icons/inspectorWaiting.svg
+  SvgGenImage get inspectorWaiting =>
+      const SvgGenImage('assets/icons/inspectorWaiting.svg');
 
   /// File path: assets/icons/list-task.svg
   SvgGenImage get listTask => const SvgGenImage('assets/icons/list-task.svg');
@@ -63,6 +98,16 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/logoName.svg
   SvgGenImage get logoName => const SvgGenImage('assets/icons/logoName.svg');
+
+  /// File path: assets/icons/logoNameDark.svg
+  SvgGenImage get logoNameDark =>
+      const SvgGenImage('assets/icons/logoNameDark.svg');
+
+  /// File path: assets/icons/micOff.svg
+  SvgGenImage get micOff => const SvgGenImage('assets/icons/micOff.svg');
+
+  /// File path: assets/icons/micOn.svg
+  SvgGenImage get micOn => const SvgGenImage('assets/icons/micOn.svg');
 
   /// File path: assets/icons/moscow.svg
   SvgGenImage get moscow => const SvgGenImage('assets/icons/moscow.svg');
@@ -109,6 +154,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/services4.svg
   SvgGenImage get services4 => const SvgGenImage('assets/icons/services4.svg');
 
+  /// File path: assets/icons/services5.svg
+  SvgGenImage get services5 => const SvgGenImage('assets/icons/services5.svg');
+
   /// File path: assets/icons/statusApproved.svg
   SvgGenImage get statusApproved =>
       const SvgGenImage('assets/icons/statusApproved.svg');
@@ -121,8 +169,21 @@ class $AssetsIconsGen {
   SvgGenImage get statusWaiting =>
       const SvgGenImage('assets/icons/statusWaiting.svg');
 
+  /// File path: assets/icons/switchIcon.svg
+  SvgGenImage get switchIcon =>
+      const SvgGenImage('assets/icons/switchIcon.svg');
+
+  /// File path: assets/icons/videoOff.svg
+  SvgGenImage get videoOff => const SvgGenImage('assets/icons/videoOff.svg');
+
+  /// File path: assets/icons/videoOn.svg
+  SvgGenImage get videoOn => const SvgGenImage('assets/icons/videoOn.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [
+  List<dynamic> get values => [
+        alertDialogClassMaterialLibraryDartAPI,
+        applicationBackground,
+        approvedBackground,
         arrowDown,
         assistance,
         botLogo,
@@ -133,10 +194,19 @@ class $AssetsIconsGen {
         chatActions,
         chatHideActions,
         cloudLogo,
+        deleteSign,
+        endCall,
         fingerprint,
+        inspectorApplications,
+        inspectorApproved,
+        inspectorLogo,
+        inspectorWaiting,
         listTask,
         logo,
         logoName,
+        logoNameDark,
+        micOff,
+        micOn,
         moscow,
         moscowAccess,
         mosruCircleLogo,
@@ -150,78 +220,46 @@ class $AssetsIconsGen {
         services2,
         services3,
         services4,
+        services5,
         statusApproved,
         statusDeclined,
-        statusWaiting
+        statusWaiting,
+        switchIcon,
+        videoOff,
+        videoOn
       ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/mainList1.png
-  AssetGenImage get mainList1 =>
-      const AssetGenImage('assets/images/mainList1.png');
-
   /// File path: assets/images/mainList1_1.png
   AssetGenImage get mainList11 =>
       const AssetGenImage('assets/images/mainList1_1.png');
-
-  /// File path: assets/images/mainList2.png
-  AssetGenImage get mainList2 =>
-      const AssetGenImage('assets/images/mainList2.png');
 
   /// File path: assets/images/mainList2_1.png
   AssetGenImage get mainList21 =>
       const AssetGenImage('assets/images/mainList2_1.png');
 
-  /// File path: assets/images/mainList3.png
-  AssetGenImage get mainList3 =>
-      const AssetGenImage('assets/images/mainList3.png');
-
   /// File path: assets/images/mainList3_1.png
   AssetGenImage get mainList31 =>
       const AssetGenImage('assets/images/mainList3_1.png');
-
-  /// File path: assets/images/mainList4.png
-  AssetGenImage get mainList4 =>
-      const AssetGenImage('assets/images/mainList4.png');
 
   /// File path: assets/images/mainList4_1.png
   AssetGenImage get mainList41 =>
       const AssetGenImage('assets/images/mainList4_1.png');
 
-  /// File path: assets/images/mainList5.png
-  AssetGenImage get mainList5 =>
-      const AssetGenImage('assets/images/mainList5.png');
-
   /// File path: assets/images/mainList5_1.png
   AssetGenImage get mainList51 =>
       const AssetGenImage('assets/images/mainList5_1.png');
-
-  /// File path: assets/images/mainList6.png
-  AssetGenImage get mainList6 =>
-      const AssetGenImage('assets/images/mainList6.png');
 
   /// File path: assets/images/mainList6_1.png
   AssetGenImage get mainList61 =>
       const AssetGenImage('assets/images/mainList6_1.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-        mainList1,
-        mainList11,
-        mainList2,
-        mainList21,
-        mainList3,
-        mainList31,
-        mainList4,
-        mainList41,
-        mainList5,
-        mainList51,
-        mainList6,
-        mainList61
-      ];
+  List<AssetGenImage> get values =>
+      [mainList11, mainList21, mainList31, mainList41, mainList51, mainList61];
 }
 
 class Assets {

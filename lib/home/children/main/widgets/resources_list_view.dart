@@ -13,6 +13,7 @@ class ResourcesListView extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return ListView(
+      shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       children: [
         SizedBox(width: width * 0.05),

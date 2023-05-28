@@ -114,25 +114,38 @@ class _CheckInBodyState extends State<CheckInBody> {
         color: ColorName.backgroundOrange,
       ),
       child: DropdownButton(
+        itemHeight: 50,
         hint: Text(
           'Не выбран',
           style: TextStyles.black14.copyWith(color: Colors.grey),
           overflow: TextOverflow.ellipsis,
         ),
         value: _selectedKno,
+        selectedItemBuilder: (context) {
+          return widget.knos.map<Widget>((kno) {
+            return Center(
+              child: Text(
+                kno.name,
+                style: TextStyles.black14,
+                overflow: TextOverflow.ellipsis,
+              ),
+            );
+          }).toList();
+        },
         items: widget.knos.map<DropdownMenuItem<Kno>>((kno) {
           return DropdownMenuItem<Kno>(
             value: kno,
             child: Text(
               kno.name,
               style: TextStyles.black14,
-              overflow: TextOverflow.ellipsis,
+              overflow: TextOverflow.fade,
             ),
           );
         }).toList(),
         onChanged: (Kno? kno) {
           setState(() {
             if (_selectedKno != kno) {
+              _selectedSlot = null;
               _selectedTopic = null;
               _selectedType = null;
               _selectedKno = kno;
@@ -160,6 +173,21 @@ class _CheckInBodyState extends State<CheckInBody> {
           overflow: TextOverflow.ellipsis,
         ),
         value: _selectedType,
+        selectedItemBuilder: (context) {
+          if (_selectedKno != null) {
+            return _selectedKno!.inspectionTypes.keys.map<Widget>((type) {
+              return Center(
+                child: Text(
+                  type,
+                  style: TextStyles.black14,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              );
+            }).toList();
+          } else {
+            return [];
+          }
+        },
         items: _selectedKno != null
             ? _selectedKno!.inspectionTypes.keys
                 .map<DropdownMenuItem<String>>((type) {
@@ -168,7 +196,7 @@ class _CheckInBodyState extends State<CheckInBody> {
                   child: Text(
                     type,
                     style: TextStyles.black14,
-                    overflow: TextOverflow.ellipsis,
+                    overflow: TextOverflow.fade,
                   ),
                 );
               }).toList()
@@ -202,6 +230,22 @@ class _CheckInBodyState extends State<CheckInBody> {
           overflow: TextOverflow.ellipsis,
         ),
         value: _selectedTopic,
+        selectedItemBuilder: (context) {
+          if (_selectedType != null) {
+            return _selectedKno!.inspectionTypes[_selectedType]!
+                .map<Widget>((type) {
+              return Center(
+                child: Text(
+                  type,
+                  style: TextStyles.black14,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              );
+            }).toList();
+          } else {
+            return [];
+          }
+        },
         items: _selectedType != null
             ? _selectedKno!.inspectionTypes[_selectedType]!
                 .map<DropdownMenuItem<String>>((type) {
@@ -210,7 +254,7 @@ class _CheckInBodyState extends State<CheckInBody> {
                   child: Text(
                     type,
                     style: TextStyles.black14,
-                    overflow: TextOverflow.ellipsis,
+                    overflow: TextOverflow.fade,
                   ),
                 );
               }).toList()
