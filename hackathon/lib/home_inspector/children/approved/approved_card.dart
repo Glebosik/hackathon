@@ -53,7 +53,7 @@ class ApprovedCard extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Text(
-                application.knoName,
+                'ИП «${applicationUser.user.secondName} ${applicationUser.user.firstName}${applicationUser.user.thirdName != null ? ' ${applicationUser.user.thirdName}' : ''}»',
                 style: TextStyles.black14,
               ),
               const SizedBox(height: 12),
