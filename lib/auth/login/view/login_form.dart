@@ -15,9 +15,6 @@ class LoginForm extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return BlocListener<LoginCubit, LoginState>(
-      listenWhen: (previous, current) {
-        return (current.status.isFailure && !previous.status.isFailure);
-      },
       listener: (context, state) {
         if (state.status.isFailure) {
           ScaffoldMessenger.of(context)

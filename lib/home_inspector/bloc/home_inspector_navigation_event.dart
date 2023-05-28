@@ -18,3 +18,5 @@ class PageTapped extends HomeInspectorNavigationEvent {
 class UpdateApplications extends HomeInspectorNavigationEvent {}
 
 class UpdateApproved extends HomeInspectorNavigationEvent {}
+
+class UpdateApprovedAndGoToScreen extends HomeInspectorNavigationEvent {}

@@ -46,6 +46,8 @@ class HomeInspectorNavigationBloc
           await firestoreRepository.getInspectorApplicationsWaiting();
       applications.sort(
           (a, b) => a.application.dateStart.compareTo(b.application.dateStart));
+
+      emit(ApplicationPageLoaded(applications));
     });
 
     on<UpdateApproved>((event, emit) async {
@@ -56,6 +58,17 @@ class HomeInspectorNavigationBloc
       } else {
         approved = testApproved;
       }
+    });
+
+    on<UpdateApprovedAndGoToScreen>((event, emit) async {
+      if (auth.FirebaseAuth.instance.currentUser!.email != 'test2@test.ru') {
+        approved = await firestoreRepository.getInspectorApplicationsApproved();
+        approved.sort((a, b) =>
+            a.application.dateStart.compareTo(b.application.dateStart));
+      } else {
+        approved = testApproved;
+      }
+      emit(ApprovedPageLoaded(approved));
     });
 
     on<PageTapped>((event, emit) async {

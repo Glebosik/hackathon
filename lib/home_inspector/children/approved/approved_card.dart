@@ -36,7 +36,7 @@ class ApprovedCard extends StatelessWidget {
           if (result is String && result == 'Update' && context.mounted) {
             context
                 .read<HomeInspectorNavigationBloc>()
-                .add(UpdateApplications());
+                .add(UpdateApprovedAndGoToScreen());
           }
         },
         child: Padding(

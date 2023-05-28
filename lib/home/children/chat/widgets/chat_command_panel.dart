@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hackathon/gen/assets.gen.dart';
+import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/home/children/chat/bloc/chat_bloc.dart';
 import 'package:hackathon/home/children/chat/bloc/message.dart';
 import 'package:hackathon/text_styles.dart';
@@ -144,8 +146,11 @@ class _ChatCommandPanelState extends State<ChatCommandPanel> {
                             }
                           });
                         },
-                        icon: Assets.icons.recordingMessage
-                            .svg(height: width * 0.13),
+                        icon: SpinKitWave(
+                          itemCount: 7,
+                          color: ColorName.hyperlinkOrange,
+                          size: width * 0.1,
+                        ),
                       )
                     : IconButton(
                         iconSize: width * 0.13,
