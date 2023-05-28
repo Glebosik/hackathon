@@ -184,6 +184,12 @@ class FirestoreRepository {
         .update({
       'status': 'Отклонена',
     });
+    _firestore
+        .doc('kno/${application.knoId}/freeSlots/${application.dateStart}')
+        .set({
+      'dateStart': application.dateStart,
+      'dateEnd': application.dateEnd,
+    });
   }
 
   Future<Map<String, dynamic>> getConferenceData() async {

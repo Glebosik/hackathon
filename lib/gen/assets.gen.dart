@@ -14,10 +14,6 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/AlertDialog class - material library - Dart API.html
-  String get alertDialogClassMaterialLibraryDartAPI =>
-      'assets/icons/AlertDialog class - material library - Dart API.html';
-
   /// File path: assets/icons/applicationBackground.svg
   SvgGenImage get applicationBackground =>
       const SvgGenImage('assets/icons/applicationBackground.svg');
@@ -180,8 +176,7 @@ class $AssetsIconsGen {
   SvgGenImage get videoOn => const SvgGenImage('assets/icons/videoOn.svg');
 
   /// List of all assets
-  List<dynamic> get values => [
-        alertDialogClassMaterialLibraryDartAPI,
+  List<SvgGenImage> get values => [
         applicationBackground,
         approvedBackground,
         arrowDown,

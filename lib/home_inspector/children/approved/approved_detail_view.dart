@@ -165,32 +165,9 @@ class ApprovedDetailView extends StatelessWidget {
                                     if (isToDelete is bool &&
                                         isToDelete == true &&
                                         context.mounted) {
-                                      final userId = context
-                                          .read<AuthenticationRepository>()
-                                          .currentUser
-                                          .id;
-                                      FirebaseFirestore.instance
-                                          .collection(
-                                              'inspectors/${application.inspectorId}/approved')
-                                          .doc(
-                                              '$userId ${application.knoId} ${application.dateStart}')
-                                          .delete();
-                                      FirebaseFirestore.instance
-                                          .collection(
-                                              'users/$userId/applications')
-                                          .doc(
-                                              '$userId ${application.knoId} ${application.dateStart}')
-                                          .update({
-                                        'status': 'Отклонена',
-                                      });
-                                      FirebaseFirestore.instance
-                                          .collection(
-                                              'kno/${application.knoId}/freeSlots')
-                                          .doc('${application.dateStart}')
-                                          .set({
-                                        'dateStart': application.dateStart,
-                                        'dateEnd': application.dateEnd,
-                                      });
+                                      context
+                                          .read<FirestoreRepository>()
+                                          .declineApplication(application);
                                       Navigator.of(context).pop('Update');
                                     }
                                   },

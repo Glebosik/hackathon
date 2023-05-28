@@ -16,9 +16,6 @@ class SignUpForm extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return BlocListener<SignUpCubit, SignUpState>(
-      listenWhen: (previous, current) {
-        return (current.status.isFailure && !previous.status.isFailure);
-      },
       listener: (context, state) {
         if (state.status.isSuccess) {
           Navigator.of(context).pop();
