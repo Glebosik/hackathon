@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/home/children/check_in/check_in_view.dart';
+import 'package:hackathon/text_styles.dart';
 import 'package:hackathon/utils/route_transitions.dart';
 
 class ConsultButton extends StatelessWidget {
@@ -32,10 +33,8 @@ class ConsultButton extends StatelessWidget {
               Expanded(
                 child: Text(
                   'Запись на консультирование',
-                  style: GoogleFonts.inter().copyWith(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
+                  style:
+                      TextStyles.white14.copyWith(fontWeight: FontWeight.w500),
                 ),
               ),
               const Icon(

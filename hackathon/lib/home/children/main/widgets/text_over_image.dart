@@ -29,6 +29,20 @@ class TextOverImage extends StatelessWidget {
               child: image,
             ),
           ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [Colors.black, Colors.transparent],
+                      stops: [0.0, 0.5],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter)),
+              width: height * 0.180,
+              height: height * 0.160,
+              alignment: Alignment.center,
+            ),
+          ),
           Container(
             padding: EdgeInsets.all(width * 0.02),
             width: height * 0.180,

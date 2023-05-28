@@ -135,10 +135,15 @@ class _CheckInBodyState extends State<CheckInBody> {
         items: widget.knos.map<DropdownMenuItem<Kno>>((kno) {
           return DropdownMenuItem<Kno>(
             value: kno,
-            child: Text(
-              kno.name,
-              style: TextStyles.black14,
-              overflow: TextOverflow.fade,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  kno.name,
+                  style: TextStyles.black14,
+                  overflow: TextOverflow.fade,
+                ),
+              ],
             ),
           );
         }).toList(),

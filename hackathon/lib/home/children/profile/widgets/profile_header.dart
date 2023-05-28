@@ -43,10 +43,10 @@ class ProfileHeader extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(user.secondName ?? '',
-                              style: TextStyles.black18bold),
+                              style: TextStyles.black16bold),
                           Text(
                               '${user.firstName ?? ''} ${user.thirdName ?? ''}',
-                              style: TextStyles.black18bold),
+                              style: TextStyles.black16bold),
                         ],
                       )
                     ],

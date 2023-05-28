@@ -20,11 +20,11 @@ class ChatCommandPanelPlaceholder extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-              iconSize: width * 0.13,
+              iconSize: width * 0.10,
               splashRadius: 20,
               onPressed: null,
               icon: Assets.icons.chatActions.svg(
-                  height: width * 0.13,
+                  height: width * 0.10,
                   colorFilter: const ColorFilter.linearToSrgbGamma()),
             ),
             SizedBox(
@@ -47,11 +47,11 @@ class ChatCommandPanelPlaceholder extends StatelessWidget {
               ),
             ),
             IconButton(
-              iconSize: width * 0.13,
+              iconSize: width * 0.10,
               splashRadius: 20,
               onPressed: null,
               icon: Assets.icons.recordMessage.svg(
-                  height: width * 0.13,
+                  height: width * 0.10,
                   colorFilter: const ColorFilter.linearToSrgbGamma()),
             ),
           ],
