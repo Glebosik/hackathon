@@ -117,12 +117,10 @@ class AppView extends StatelessWidget {
         final rows = excel.tables[table]?.maxRows ?? 0;
         int? beginningOfData;
         String knoName = excel.tables[table]!.row(0).first!.value.toString();
-        print('ДО: $knoName');
         if (knoName.contains('(')) {
           knoName = knoName.replaceRange(
               knoName.indexOf('(') - 1, knoName.length, '');
         }
-        print('После: $knoName');
         //Ищем где начинаются данные
         bool flag = false;
         for (int j = 3; j < 15; ++j) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/home/children/chat/bloc/message.dart';
@@ -41,8 +42,8 @@ class ChatBodyWaiting extends StatelessWidget {
                         : ColorName.backgroundOrange),
                   ),
                   padding: const EdgeInsets.all(16),
-                  child: Text(
-                    messages[index].text,
+                  child: Linkify(
+                    text: messages[index].text,
                     style: (messages[index].isUser
                         ? TextStyles.black14.copyWith(color: Colors.white)
                         : TextStyles.black14.copyWith(color: Colors.black)),

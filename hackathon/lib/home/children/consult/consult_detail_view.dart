@@ -289,7 +289,11 @@ class ConsultDetailView extends StatelessWidget {
                   fixedSize: Size(width * 0.95, height * 0.07)),
               onPressed: (slot.start.difference(DateTime.now()).inMinutes > 15)
                   ? null
-                  : () {},
+                  : () {
+                      context.read<ConferenceBloc>().add(ConferenceStart());
+                      Navigator.of(context)
+                          .push(createRoute(const ConferencePage(uid: 1)));
+                    },
               child: Text(
                 'Подключиться к консультации',
                 style: GoogleFonts.inter().copyWith(fontSize: 16),

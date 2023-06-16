@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hackathon/app/app.dart';
 import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/gen/colors.gen.dart';
+import 'package:hackathon/home/children/chat/bloc/chat_bloc.dart';
 import 'package:hackathon/home/children/profile/widgets/list_card.dart';
 import 'package:hackathon/home/children/profile/widgets/widgets.dart';
 import 'package:hackathon/home/widgets/widgets.dart';
@@ -81,6 +82,7 @@ class ProfileView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20)),
                         ),
                         onPressed: () {
+                          context.read<MyChatBloc>().add(ChatCleanMessages());
                           context
                               .read<AppBloc>()
                               .add(const AppLogoutRequested());

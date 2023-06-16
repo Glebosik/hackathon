@@ -88,9 +88,9 @@ class _CalendarViewState extends State<CalendarView> {
                         prioritizedBuilder: (context, day, focusedDay) {
                       Color color;
                       if (state.events.containsKey(day)) {
-                        if (state.events[day]!.length < 3) {
+                        if (state.events[day]!.length < 4) {
                           color = ColorName.orange;
-                        } else if (state.events[day]!.length < 6) {
+                        } else if (state.events[day]!.length < 8) {
                           color = ColorName.backgroundOtherOrange;
                         } else {
                           color = ColorName.greenLight;
