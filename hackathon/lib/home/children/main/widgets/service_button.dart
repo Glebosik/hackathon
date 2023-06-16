@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/gen/assets.gen.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/text_styles.dart';
@@ -32,20 +31,24 @@ class ServiceButton extends StatelessWidget {
         onPressed: () {},
         child: SizedBox(
           width: width * 0.95,
-          child: Row(children: [
-            Assets.icons.mosruCircleLogo.svg(),
-            SizedBox(width: width * 0.05),
-            Expanded(
-              child: Text(
-                text,
-                style: TextStyles.white14.copyWith(fontWeight: FontWeight.w500),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+            child: Row(children: [
+              Assets.icons.mosruCircleLogo.svg(),
+              SizedBox(width: width * 0.05),
+              Expanded(
+                child: Text(
+                  text,
+                  style:
+                      TextStyles.white14.copyWith(fontWeight: FontWeight.w500),
+                ),
               ),
-            ),
-            const Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.white,
-            ),
-          ]),
+              const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+              ),
+            ]),
+          ),
         ),
       ),
     );

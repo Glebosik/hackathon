@@ -11,6 +11,8 @@ class ChatInit extends MyChatEvent {}
 
 class ChatReconnect extends MyChatEvent {}
 
+class ChatCleanMessages extends MyChatEvent {}
+
 class ChatMessageSend extends MyChatEvent {
   final Message message;
   const ChatMessageSend(this.message);

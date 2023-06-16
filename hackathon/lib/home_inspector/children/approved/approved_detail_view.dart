@@ -1,5 +1,3 @@
-import 'package:authentication_repository/authentication_repository.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firestore_repository/firestore_repository.dart';
 import 'package:flutter/material.dart';
@@ -267,7 +265,11 @@ class ApprovedDetailView extends StatelessWidget {
                   fixedSize: Size(width * 0.95, height * 0.07)),
               onPressed: (slot.start.difference(DateTime.now()).inMinutes > 15)
                   ? null
-                  : () {},
+                  : () {
+                      context.read<ConferenceBloc>().add(ConferenceStart());
+                      Navigator.of(context)
+                          .push(createRoute(const ConferencePage(uid: 2)));
+                    },
               child: Text(
                 'Подключиться к консультации',
                 style: GoogleFonts.inter().copyWith(fontSize: 16),

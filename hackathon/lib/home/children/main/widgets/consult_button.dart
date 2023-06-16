@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon/gen/colors.gen.dart';
 import 'package:hackathon/home/children/check_in/check_in_view.dart';
 import 'package:hackathon/text_styles.dart';
@@ -15,8 +14,10 @@ class ConsultButton extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Container(
       decoration: const BoxDecoration(
-          gradient:
-              LinearGradient(colors: [ColorName.green, ColorName.greenLight]),
+          gradient: LinearGradient(colors: [
+            ColorName.green,
+            ColorName.greenLight,
+          ]),
           borderRadius: BorderRadius.all(Radius.circular(12))),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

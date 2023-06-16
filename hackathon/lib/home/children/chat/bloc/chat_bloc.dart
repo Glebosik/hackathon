@@ -19,6 +19,12 @@ class MyChatBloc extends Bloc<MyChatEvent, MyChatState> {
       (event, emit) {},
     );
 
+    on<ChatCleanMessages>(
+      (event, emit) {
+        messages = [];
+      },
+    );
+
     on<ChatInit>(
       (event, emit) async {
         emit(ChatInitial(messages));

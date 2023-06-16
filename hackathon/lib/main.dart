@@ -38,7 +38,7 @@ void main() async {
     const SystemUiOverlayStyle(statusBarColor: Colors.white),
   );
 
-  //TODO
+  //TODO Кэширование объемных иконок
   List<SvgAssetLoader> loaders = [];
   loaders.add(SvgAssetLoader(Assets.icons.cloudLogo.path));
   loaders.add(SvgAssetLoader(Assets.icons.logoName.path));
